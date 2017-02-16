@@ -1,0 +1,82 @@
+<ion-view view-title="图表">
+    <ion-nav-buttons side="left">
+        <button ui-sref="home" class="button button-positive icon ion-chevron-left"></button>
+    </ion-nav-buttons>
+
+	<ion-content class="has-header" overflow-scroll="false">
+		<div class="list">
+			<div id="barOptions" class="item item-divider">
+				<i class="fa fa-bar-chart fa-fw"></i> 柱状图
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" options="vo.barOptions"></chart>
+			</div>
+
+			<div id="hbarOptions" class="item item-divider">
+				<i class="fa fa-align-left fa-fw"></i> 条形图
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" options="vo.hbarOptions"></chart>
+			</div>
+			
+			<div id="lineOptions" class="item item-divider">
+				<i class="fa fa-line-chart fa-fw"></i> 折线图
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" options="vo.lineOptions"></chart>
+			</div>
+			
+			<div id="pieOptions" class="item item-divider">
+				<i class="fa fa-pie-chart fa-fw"></i> 饼图
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" options="vo.pieOptions"></chart>
+			</div>
+			
+			<div id="doughnutOptions" class="item item-divider">
+				<i class="fa fa-pie-chart fa-fw"></i> 环形图
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" options="vo.doughnutOptions"></chart>
+			</div>
+			
+			<div id="radarOptions" class="item item-divider">
+				<i class="fa fa-feed fa-fw"></i> 雷达图
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" options="vo.radarOptions" theme="macarons"></chart>
+			</div>
+
+			<div id="areaOptions" class="item item-divider">
+				<i class="fa fa-area-chart fa-fw"></i> 堆积图
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" options="vo.areaOptions"></chart>
+			</div>
+
+			<div id="mapOptions" class="item item-divider">
+				<i class="fa fa-map-o fa-fw"></i> 中国地图
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" loading="地图加载中..." options="vo.mapOptions"></chart>
+			</div>
+			
+			<div id="gaugeOptions" class="item item-divider">
+				<i class="fa fa-dashboard fa-fw"></i> 仪表盘
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" options="vo.gaugeOptions" theme="macarons"></chart>
+			</div>
+			
+			<div id="funnelOptions" class="item item-divider">
+				<i class="fa fa-hourglass-start fa-fw"></i> 漏斗图
+			</div>
+			<div class="item">
+				<chart width="100%" height="300px" options="vo.funnelOptions"></chart>
+			</div>
+		</div>
+	</ion-content>
+	<style type="text/css">
+		
+	</style>
+</ion-view>

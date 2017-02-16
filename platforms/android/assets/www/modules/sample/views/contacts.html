@@ -1,0 +1,96 @@
+<ion-view view-title="通讯录">
+    <ion-nav-buttons side="left">
+        <button ui-sref="home" class="button button-positive icon ion-chevron-left"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header" delegate-handle="contactsScroll" scroll-event-interval="1" overflow-scroll="false">
+        <div class="list" style="margin-bottom:0;">
+            <div class="item item-input" style="padding:2px 0 2px 16px;background:#f8f8f8;">
+                <i class="icon ion-ios-search-strong placeholder-icon"></i>
+                <input type="text" ng-model="vo.searchCity" ng-keypress="vc.enter($event)" style="width:100%;" placeholder="请输入姓名搜索">
+            </div>
+            <div class="item item-divider" id="热">最近联系人</div>
+            <div class="item" style="padding-bottom:6px;white-space:normal;">
+                <button style="margin:0 10px 10px 0;padding:4px 10px;font-size:14px;border:1px solid rgb(221, 221, 221);" ng-repeat="item in vo.hotContacts" class="button button-small button-stable"><i class="fa fa-fw fa-user"></i> {{item}}</button>
+            </div>
+        </div>
+        
+        <div class="list">
+            <div ng-repeat="(key,value) in vo.contacts">
+                <div ng-show="(value|filter:{name:vo.searchCity}).length>0" id="{{key}}" class="item item-divider item-alias">{{key}}</div>
+                <a href="javascript:void(0)" ng-repeat="item in value|filter:{name:vo.searchCity}" class="item item-icon-right item-avatar">
+                    <img src="images/common/head.jpg">
+                    <h2>{{item.name}}</h2>
+                    <p>18702189255</p>
+                    <i class="icon fa fa-fw fa-angle-right text-content" style="font-size:26px;"></i>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+    <div ng-style="{opacity:vo.aliasToast?1:0}" class="box-alias">
+        {{vo.alias}}
+    </div>
+    <ul class="alias text-primary" id="draggableAlias">
+        <li style="height:4.347%;" on-touch="vc.selectAlias($event,0)" on-drag="vc.selectAlias($event,0)"><i class="fa fa-star"></i></li>
+        <li style="height:4.347%;" ng-if="!$first" on-touch="vc.selectAlias($event,$index)" on-drag="vc.selectAlias($event,$index)" ng-repeat="item in vo.aliasList">{{item}}</li>
+    </ul>
+    <style type="text/css">
+        .location-item{
+            display:inline-block;
+            border:1px solid #DDD;
+            border-radius:4px;
+            margin:0 10px 10px 0;
+            padding:8px 16px;
+            text-align:center;
+        }
+        .ion-record{
+            font-size:10px;
+        }
+        .content-row{
+            padding:10px 15px 0;
+            color:#888;
+        }
+        .input-search{
+            padding:0 10px!important;
+            width:100%;
+            height:36px!important;
+            border:1px solid #DDD!important;
+            border-radius:25px;
+        }
+        .input-search::-ms-input-placeholder{text-align: center;}
+        .input-search::-webkit-input-placeholder{text-align: center;}
+        .alias{
+            position:absolute;
+            top:20%;
+            right:0;
+            width:30px;
+            height:60%;
+            color:orange;
+            text-align:center;
+        }
+        .alias li{
+            height:13px;
+        }
+        .item-alias{
+            color:#888;
+            padding:10px 15px 5px;
+        }
+        .box-alias{
+            position: fixed;
+            margin: auto;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            height: 60px;
+            width: 60px;
+            line-height: 60px;
+            text-align: center;
+            color: #FFF;
+            border-radius:6px;
+            font-size: 300%;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition:opacity .5s;
+        }
+    </style>
+</ion-view>

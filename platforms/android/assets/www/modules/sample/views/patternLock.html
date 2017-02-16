@@ -1,0 +1,10 @@
+<ion-modal-view>
+	<div class="bar bar-header bar-positive">
+        <button nav-direction="back" ng-click="hidePatternLock()" class="button button-positive icon ion-chevron-left"></button>
+        <h1 class="title">手势解锁</h1>
+    </div>
+
+	<ion-content class="has-header" ng-style="{'padding-top':(modalHeight-370)/2}" style="text-align:center;background-size: 100% 100%;background-image:url(images/login/lock-bg.jpg)" scroll="false">
+		<pattern-lock lock="lock"></pattern-lock>
+	</ion-content>
+</ion-modal-view>

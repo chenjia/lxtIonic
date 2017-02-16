@@ -1,0 +1,19 @@
+<ion-view view-title="百度地图">
+    <ion-nav-buttons side="left">
+        <button ui-sref="home" class="button button-positive icon ion-chevron-left"></button>
+    </ion-nav-buttons>
+	
+	<ion-content class="has-header">
+		<div class="list" style="margin-bottom:0;">
+            <div class="item item-input" style="padding:2px 0 2px 16px;background:#f8f8f8;">
+                <i ng-click="vc.searchAddress(vo.searchKey)" class="icon ion-ios-search-strong placeholder-icon"></i>
+                <input type="text" ng-model="vo.searchKey" ng-keypress="vc.enter($event)" style="width:100%;" placeholder="请输入地址内容">
+            </div>
+        </div>
+		<iframe ng-style="{height:screenHeight/2+'px'}" src="modules/sample/views/common/baiduMap.html?callback=mapCallback" style="width:100%;"></iframe>
+	</ion-content>
+
+	<style type="text/css">
+		
+	</style>
+</ion-view>

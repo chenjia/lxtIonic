@@ -1,45 +1,71 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+<!doctype html>
+<html ng-controller="rootController">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="keyword" content="ionic,angular,html5,cordova,demo,lxt,chenjia">
+	<meta name="description" contect="ionic demo">
+	<meta name="author" contect="chenjia">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<title>lxt</title>
+	<link rel="shortcut icon" href="images/logo.png">
+	<link rel="stylesheet" href="bower_components/ionic/css/ionic.min.css">
+	<link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="platform-android platform-cordova platform-webview">
+	<div ng-style="{opacity:init?0:1,display:init==2?'none':'flex'}" style="position:absolute;z-index:99999;transition:all .5s linear;width:100%;height:100%;display:flex;justify-content:center;align-items:center;background:#EDEDED;">
+		<img style="width:65px;height:65px;" src="images/loading.gif">
+	</div>
+	
+	<ion-side-menus delegate-handle="menuHandle">
+		<ion-side-menu side="left" style="display:none" ng-style="{display:menus!=null?'block':'none'}">
+			<div class="bar bar-header bar-calm">
+				<h1 class="title">菜单项</h1>
+			</div>
+			<ion-content class="has-header">
+				<ul class="list menus">
+					<div ng-repeat="menu in menus">
+						<li class="item" ng-class="{active:shownMenu == menu}" ng-click="toggleMenu(menu)"><i class="icon" ng-class="{'ion-plus-round':shownMenu != menu,'ion-minus-round':shownMenu == menu}"></i> {{menu.name}}</li>
+						<li ng-show="isMenuShown(menu)" ng-repeat="menu2 in menu.menus" ui-sref="{{menu2.state}}" class="item item-accordion">
+							<i ng-class="menu2.icon"></i> {{menu2.name}}
+						</li>
+					</div>
+				</ul>
+			</ion-content>
+		</ion-side-menu>
 
-    <link rel="manifest" href="manifest.json">
-
-    <!-- un-comment this code to enable service worker
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
-      }
-    </script>-->
-
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter" class="platform-android platform-cordova platform-webview">
-
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
-  </body>
+		<ion-side-menu-content>
+			<ion-nav-bar style="display:none;" ng-style="{display:init?'block':'none'}" class="bar-positive"></ion-nav-bar>
+			<ion-nav-view></ion-nav-view>
+		</ion-side-menu-content>
+	</ion-side-menus>
+	<nav style="display:none;" ng-style="{display:vo.ready?'block':'none'}" mfb-menu position="br" effect="zoomin" label="快捷菜单" active-icon="fa fa-minus" resting-icon="fa fa-plus" toggling-method="click">
+		<button mfb-button ui-sref="loading" icon="fa fa-spinner fa-pulse" label="加载图标"></button>
+		<button mfb-button ui-sref="list" icon="fa fa-bars" label="动态列表"></button>
+		<button mfb-button ui-sref="contacts" icon="fa fa-book" label="通讯录"></button>
+		<button mfb-button ui-sref="chart" icon="fa fa-bar-chart" label="动态图表"></button>
+		<button mfb-button ui-sref="form" icon="fa fa-list-alt" label="表单"></button>
+		<button mfb-button ui-sref="tab" icon="fa fa-folder-o" label="选项卡"></button>
+	</nav>
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/ionic/js/ionic.bundle.min.js"></script>
+<script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+<script src="./cordova.js"></script>
+<script src="bower_components/ngCordova/ng-cordova.min.js"></script>
+<script src="modules/base/utils/security.js"></script>
+<script src="modules/base/utils/format.js"></script>
+<script src="modules/base/utils/cache.js"></script>
+<script src="modules/base/utils/http.js"></script>
+<script src="modules/base/utils/service.js"></script>
+<script src="modules/base/utils/interceptor.js"></script>
+<script src="modules/base/utils/utils.js"></script>
+<script src="modules/base/app.js"></script>
+<script src="modules/base/directives/toast.js"></script>
+<script src="modules/sample/sampleModule.js"></script>
+<script src="modules/sample/service/sampleService.js"></script>
+<script>angular.bootstrap(document, ['app']);</script>
 </html>

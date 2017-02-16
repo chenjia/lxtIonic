@@ -1,0 +1,107 @@
+<ion-view view-title="登录">
+    <ion-nav-buttons side="left">
+        <button ui-sref="home" class="button button-positive icon ion-chevron-left"></button>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+        <button ng-click="vc.showPatternLock()" class="button button-positive icon fa fa-th"></button>
+    </ion-nav-buttons>
+    
+    <ion-content class="has-header">
+    	<form name="form">
+			<div class="list list-inset" style="padding-bottom:150px;">
+				<label class="item item-input" ng-class="{'field-error':form.username.$dirty&&!form.username.$valid}">
+					<span class="input-label">用户名</span>
+					<input type="text" name="username" ng-model="vo.username" required>
+				</label>
+				<div ng-style="{'display':form.username.$dirty&&!form.username.$valid?'block':'none'}" class="field-error-item">
+					<div class="triangle"></div>
+					<span>用户名不能为空！</span>
+				</div>
+				<label class="item item-input" ng-class="{'field-error':form.password.$dirty&&!form.password.$valid}">
+					<span class="input-label">密　码</span>
+					<input type="password" name="password" ng-model="vo.password" required>
+				</label>
+				<div ng-style="{'display':form.password.$dirty&&!form.password.$valid?'block':'none'}" class="field-error-item">
+					<div class="triangle"></div>
+					<span>密码不能为空！</span>
+				</div>
+				<div class="item item-input" style="padding:6px 15px!important;" ng-class="{'radius-bottom':!vo.needCheck}">
+					<span class="input-label">验证码</span>
+					<input type="text" name="captcha" ng-model="vo.captcha" placeholder="输入验证码" style="padding-right:0;" required>
+					<img ng-click="vc.refreshCaptcha()" ng-src="data:image/png;base64,{{img}}" style="flex:1 220px;width:100px;height:30px;border:1px solid #ccc;border-radius:3px;margin-right:35px;">
+				</div>
+				<div ng-style="{'display':form.captcha.$dirty&&!form.captcha.$valid?'block':'none'}" class="field-error-item">
+					<div class="triangle"></div>
+					<span>验证码不能为空！</span>
+				</div>
+				<div ng-show="vo.needCheck" class="item" style="display:none;padding:10px 15px!important;border-radius:0 0 6px 6px;">
+					<div id="drag">
+						<div class="drag_bg"></div>
+			            <div class="drag_text" onselectstart="return false;" unselectable="on">拖动滑块验证</div>
+			            <div on-drag-right="dragRight($event)" on-release="release()" class="handler">
+			            	<i ng-if="!vo.checkPass" style="font-size:16px;" class="positive fa fa-hand-o-right"></i>
+			            	<i ng-if="vo.checkPass" style="font-size:20px;color:#7ac23c;" class="fa fa-check-circle-o"></i>
+			            </div>
+					</div>
+				</div>
+				<button class="button button-block button-positive" ng-click="login()">
+					登 录
+				</button>
+				<label>
+					<a class="positive">免费注册</a>
+					<a class="positive pull-right">忘记密码?</a>
+				</label>
+			</div>
+		</form>
+    </ion-content>
+
+    <style type="text/css">
+	#drag{ 
+	    position: relative;
+	    background-color: #e8e8e8;
+	    
+	    height: 34px;
+	    line-height: 34px;
+	    text-align: center;
+	}
+	#drag .handler{
+	    position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    width: 40px;
+	    height: 34px;
+	    border: 1px solid #ccc;
+	    cursor: move;
+	    background:white;
+	}
+	#drag .drag_bg{
+	    background-color: #7ac23c;
+	    height: 34px;
+	    width: 0px;
+	}
+	#drag .drag_text{
+	    position: absolute;
+	    top: 0px;
+	    width: 100%;
+	    -moz-user-select: none;
+	    -webkit-user-select: none;
+	    user-select: none;
+	    -o-user-select:none;
+	    -ms-user-select:none; 
+	}
+	.logo-banner{
+		width:100%;
+		padding:20px;
+	}
+	.logo-banner img{
+		width:100%;
+	}
+	.radius-bottom{
+		border-radius:0 0 6px 6px;
+	}
+	.spinner svg{
+		width:32px;
+		height:32px;
+	}
+</style>
+</ion-view>

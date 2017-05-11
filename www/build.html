@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-controller="rootController">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="keyword" content="ionic,angular,html5,cordova,demo,lxt,chenjia">
+	<meta name="description" contect="ionic demo">
+	<meta name="author" contect="chenjia">
+	<meta name="baidu-site-verification" content="cywHJKqejR" />
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<title>lxt</title>
+	<link rel="shortcut icon" href="images/logo.png">
+	<link rel="stylesheet" href="lxtClient-1.0.0.min.css">
+</head>
+<body>
+	<ion-side-menus delegate-handle="menuHandle">
+		<ion-side-menu side="left" style="display:none" ng-style="{display:menus!=null?'block':'none'}">
+			<div class="bar bar-header bar-calm">
+				<h1 class="title">菜单项</h1>
+			</div>
+			<ion-content class="has-header">
+				<ul class="list menus">
+					<div ng-repeat="menu in menus">
+						<li class="item" ng-class="{active:shownMenu == menu}" ng-click="toggleMenu(menu)"><i class="icon" ng-class="{'ion-plus-round':shownMenu != menu,'ion-minus-round':shownMenu == menu}"></i> {{menu.name}}</li>
+						<li ng-show="isMenuShown(menu)" ng-repeat="menu2 in menu.menus" ui-sref="{{menu2.state}}" class="item item-accordion">
+							<i ng-class="menu2.icon"></i> {{menu2.name}}
+						</li>
+					</div>
+				</ul>
+			</ion-content>
+		</ion-side-menu>
+
+		<ion-side-menu-content>
+			<ion-nav-bar class="bar-positive"></ion-nav-bar>
+			<ion-nav-view></ion-nav-view>
+		</ion-side-menu-content>
+		<style type="text/css">
+			.list .item.item-accordion {
+				height:50px;
+				line-height:50px;
+				padding:0 0 0 30px;
+				transition: 0.2s all linear;
+			}
+			.list .item.item-accordion.ng-hide {
+				height: 0px;
+			}
+			.list .item.item-accordion.ng-hide-add,
+			.list .item.item-accordion.ng-hide-remove {
+				display: block !important;
+			}
+		</style>
+	</ion-side-menus>
+	<nav style="display:none;" ng-style="{display:vo.ready?'block':'none'}" mfb-menu position="br" effect="zoomin" label="快捷菜单" active-icon="fa fa-minus" resting-icon="fa fa-plus" toggling-method="click">
+		<button mfb-button ui-sref="loading" icon="fa fa-spinner fa-pulse" label="加载图标"></button>
+		<button mfb-button ui-sref="list" icon="fa fa-bars" label="动态列表"></button>
+		<button mfb-button ui-sref="contacts" icon="fa fa-book" label="通讯录"></button>
+		<button mfb-button ui-sref="chart" icon="fa fa-bar-chart" label="动态图表"></button>
+		<button mfb-button ui-sref="form" icon="fa fa-list-alt" label="表单"></button>
+		<button mfb-button ui-sref="tab.tab1" icon="fa fa-folder-o" label="选项卡"></button>
+		<button mfb-button ui-sref="login" icon="fa fa-lock" label="登录系统"></button>
+	</nav>
+</body>
+<script src="lxtClient-1.0.0.min.js"></script>
+</html>

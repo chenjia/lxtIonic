@@ -1,0 +1,192 @@
+<ion-view view-title="表单">
+    <ion-nav-buttons side="left">
+        <button ui-sref="home" class="button button-positive icon ion-chevron-left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button onclick="$('[type=submit]').submit()" class="button button-positive">提交</button>
+    </ion-nav-buttons>
+    <toast ng-model="vo.toastText" position="top"></toast>
+	<ion-content class="has-header" overflow-scroll="false" style="background:#f4f4f4">
+		<form name="form" ng-submit="vc.submit(form)" novalidate>
+			<div class="list form">
+				<div class="item item-divider">
+					<i class="ion-umbrella"></i> 表单验证
+				</div>
+				<div class="item item-input">
+					<span class="input-label">字段1（非空）</span>
+					<input type="text" name="字段1" ng-model="vo.field1" required ng-pattern="/^\d{0,9}(\.\d{1,9})?$/">
+				</div>
+				<div class="item item-input">
+					<span class="input-label">字段2（长度4-8）</span>
+					<input type="text" name="字段2" ng-model="vo.field2" required ng-minlength="4" ng-maxlength="8">
+				</div>
+				<div class="item item-input">
+					<span class="input-label">字段3（1-10）</span>
+					<input type="number" name="字段3" ng-model="vo.field3" required min="1" max="10">
+				</div>
+				<div class="item item-divider">
+					<i class="ion-clock"></i> 日期与时间
+				</div>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">开始日期</span>
+					<input input-datetime type="text" ng-model="vo.startDate" max="vo.endDate">
+					<i class="icon fa fa-calendar"></i>
+				</label>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">结束日期</span>
+					<input input-datetime type="text" ng-model="vo.endDate" min="vo.startDate">
+					<i class="icon fa fa-calendar"></i>
+				</label>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">开始时间</span>
+					<input input-datetime format="HH:mm" type="text" max="vo.endTime" ng-model="vo.startTime">
+					<i class="icon fa fa-calendar"></i>
+				</label>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">结束时间</span>
+					<input input-datetime format="HH:mm" type="text" min="vo.startTime" ng-model="vo.endTime">
+					<i class="icon fa fa-calendar"></i>
+				</label>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">开始日期时间</span>
+					<input input-datetime format="yyyy-MM-dd HH:mm" type="text" max="vo.endDatetime" ng-model="vo.startDatetime">
+					<i class="icon fa fa-calendar"></i>
+				</label>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">结束日期时间</span>
+					<input input-datetime format="yyyy-MM-dd HH:mm" type="text" min="vo.startDatetime" ng-model="vo.endDatetime">
+					<i class="icon fa fa-calendar"></i>
+				</label>
+			</div>
+			<div class="list form">
+				<div class="item item-divider">
+					<i class="ion-ios-list-outline"></i> 选择框
+				</div>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">选择框</span>
+					<select class="ng-hide" input-select ng-model="vo.selector" select-data="vo.selectData" option-text="value" option-value="code" prefix="想学 " suffix=" 语言" circular="true"></select>
+					<i class="icon ion-ios-arrow-down"></i>
+				</label>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">身份证</span>
+					<input input-sfz type="text" ng-model="vo.sfz">
+					<i class="icon fa fa-id-card-o font20"></i>
+				</label>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">地址</span>
+					<ul input-treelist ng-model="vo.address" labels="省,市,区" select-data="vo.addressData" option-text="text" option-value="value" option-child="children"></ul>
+					<i class="icon ion-ios-arrow-down"></i>
+				</label>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">职业</span>
+					<ul input-treelist ng-model="vo.job" filter="true" labels="职业大类,职业小类,职业名称" layout="fixed" select-data="vo.jobData" option-text="text" option-value="value" option-child="children"></ul>
+					<i class="icon ion-ios-arrow-down"></i>
+				</label>
+				<label class="item item-input item-icon-right">
+					<span class="input-label">颜色</span>
+					<input ng-style="{color:vo.color}" input-color ng-model="vo.color" type="text"/>
+					<i ng-style="{color:vo.color}" class="icon ion-android-color-palette"></i>
+				</label>
+				<div class="item item-toggle">
+					性别
+					<label class="toggle input-toggle">
+						<input type="checkbox" ng-model="vo.gender" ng-true-value="'M'" ng-false-value="'F'">
+						<div class="track">
+							<span>男　女</span>
+							<div class="handle">
+								<i ng-class="{'fa-mars':vo.gender=='M','fa-venus':vo.gender=='F'}" class="fa fa-fw"></i>
+							</div>
+						</div>
+					</label>
+				</div>
+
+				<div class="item item-toggle">
+					吸烟
+					<label class="toggle input-toggle">
+						<input type="checkbox" ng-model="vo.smoking">
+						<div class="track">
+							<span>是　否</span>
+							<div class="handle">
+								<i ng-class="{'ion-checkmark-round':vo.smoking,'ion-close-round':!vo.smoking}" class=""></i>
+							</div>
+						</div>
+					</label>
+				</div>
+			</div>
+			<div class="list form">
+				<div class="item item-divider">拖拉条（亮度：{{vo.light}}）</div>
+				<div class="item range range-balanced">
+					<i class="icon ion-ios-sunny-outline"></i>
+					<input type="range" ng-model="vo.light" name="volume" min="0" max="100">
+					<i class="icon ion-ios-sunny" style="color:#31b7e8;"></i>
+				</div>
+			</div>
+			<div class="list form">
+				<div class="item item-divider">评分（得分：{{vo.score}}）</div>
+				<div class="item">
+					<rating class="energized" ng-model="vo.score" max="5"></rating>
+				</div>
+			</div>
+			<div class="list form">
+				<div class="item item-divider">图标输入框</div>
+				<label class="item item-input-inset">
+					<label class="item-input-wrapper">
+						<i class="icon ion-search placeholder-icon"></i>
+						<input type="text" placeholder="请输入查找内容">
+					</label>
+				</label>
+			</div>
+			<div class="list form">
+				<div class="item item-divider">多选</div>
+				<ion-checkbox ng-model="filter.red">红色</ion-checkbox>
+				<ion-checkbox ng-model="filter.yellow">黄色</ion-checkbox>
+				<ion-checkbox ng-model="filter.pink">蓝色</ion-checkbox>
+			</div>
+			<div class="list form">
+				<div class="item item-divider">单选</div>
+				<ion-radio ng-model="buttonGroup" ng-value="'First'">选项一</ion-radio>
+				<ion-radio ng-model="buttonGroup" ng-value="'Second'">选项二</ion-radio>
+
+				<div class="item">
+					<div class="button-bar">
+						<a class="button" ng-class="{'button-calm':buttonGroup=='First'}" ng-click="buttonGroup='First'">选项卡一</a>
+						<a class="button" ng-class="{'button-calm':buttonGroup=='Second'}" ng-click="buttonGroup='Second'">选项卡二</a>
+					</div>
+				</div>
+			</div>
+			<button type="submit" style="display:none;"></button>
+		</form>
+	</ion-content>
+	<style type="text/css">
+		.item-floating-label .input-label+input,.item-stacked-label .input-label+input{
+			padding-right:0px!important;
+			text-align:left;
+		}
+		input{
+			background-color:transparent!important;
+		}
+		.item-icon-left .icon, .item-icon-right .icon{
+			font-size:24px;
+			color:#666;
+		}
+		.item-icon-left .icon.fa, .item-icon-right .icon.fa{
+			font-size:20px;
+		}
+		.item-select:after{
+			display:none;
+		}
+		.form{
+			margin-bottom:0;
+			background:white;
+		}
+		.form .item:last-child{
+			box-shadow: 0 1px 0 #ddd;
+		}
+		.item-icon-right .icon:before{
+			color:#31b7e8;
+		}
+		.item-icon-right .icon {
+			right: 10px;
+		}
+	</style>
+</ion-view>

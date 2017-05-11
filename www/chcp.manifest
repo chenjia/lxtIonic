@@ -1,0 +1,510 @@
+[
+  {
+    "file": "bower_components/echarts/build/dist/echarts-all.js",
+    "hash": "c9d69960ec11f6e98f756206c0f0e35d"
+  },
+  {
+    "file": "bower_components/fontawesome/css/font-awesome.min.css",
+    "hash": "2c80dd10c241adf5bc1a9cf3a2ed8c91"
+  },
+  {
+    "file": "bower_components/fontawesome/css/fonts/fontawesome-webfont.eot",
+    "hash": "45c73723862c6fc5eb3d6961db2d71fb"
+  },
+  {
+    "file": "bower_components/fontawesome/css/fonts/fontawesome-webfont.svg",
+    "hash": "f8c0645fc719130835622e71478843ea"
+  },
+  {
+    "file": "bower_components/fontawesome/css/fonts/fontawesome-webfont.ttf",
+    "hash": "7c87870ab40d63cfb8870c1f183f9939"
+  },
+  {
+    "file": "bower_components/fontawesome/css/fonts/fontawesome-webfont.woff",
+    "hash": "dfb02f8f6d0cedc009ee5887cc68f1f3"
+  },
+  {
+    "file": "bower_components/fontawesome/css/fonts/fontawesome-webfont.woff2",
+    "hash": "4b5a84aaf1c9485e060c503a0ff8cadb"
+  },
+  {
+    "file": "bower_components/fontawesome/css/fonts/FontAwesome.otf",
+    "hash": "668743fe7258676f8ef8f9b47d2a623e"
+  },
+  {
+    "file": "bower_components/ionic-rating/ionic-rating.css",
+    "hash": "4fa4e0213e36d75c89db50b704569a67"
+  },
+  {
+    "file": "bower_components/ionic-rating/ionic-rating.min.js",
+    "hash": "441ab6200b4800f130054fb9a83226cc"
+  },
+  {
+    "file": "bower_components/ionic/css/fonts/ionicons.eot",
+    "hash": "2c2ae068be3b089e0a5b59abb1831550"
+  },
+  {
+    "file": "bower_components/ionic/css/fonts/ionicons.svg",
+    "hash": "c037dbbc0e6790f30e824a50010df5fb"
+  },
+  {
+    "file": "bower_components/ionic/css/fonts/ionicons.ttf",
+    "hash": "24712f6c47821394fba7942fbb52c3b2"
+  },
+  {
+    "file": "bower_components/ionic/css/fonts/ionicons.woff",
+    "hash": "05acfdb568b3df49ad31355b19495d4a"
+  },
+  {
+    "file": "bower_components/ionic/css/ionic.min.css",
+    "hash": "8c8f2d22bfad18fe69c6abe5204c7782"
+  },
+  {
+    "file": "bower_components/ionic/js/ionic.bundle.min.js",
+    "hash": "34f01b72689414a224badd9089566158"
+  },
+  {
+    "file": "bower_components/jquery/dist/jquery.min.js",
+    "hash": "6326c600df01e3bfb9b40e1aa08176f8"
+  },
+  {
+    "file": "bower_components/mobiscroll/css/icons_mobiscroll.eot",
+    "hash": "6ed19d32ac6f73d37de8ad660a7f3c72"
+  },
+  {
+    "file": "bower_components/mobiscroll/css/icons_mobiscroll.svg",
+    "hash": "53e7b503046c9070d57db9897cfdac9e"
+  },
+  {
+    "file": "bower_components/mobiscroll/css/icons_mobiscroll.ttf",
+    "hash": "2ca4f9b32e08df77b39c6d712d64484d"
+  },
+  {
+    "file": "bower_components/mobiscroll/css/icons_mobiscroll.woff",
+    "hash": "929cfea4c2b269f6e4420150a51402e9"
+  },
+  {
+    "file": "bower_components/mobiscroll/css/mobiscroll.custom-3.0.0-beta6.min.css",
+    "hash": "0005accf931955eec5ed86f897e0d360"
+  },
+  {
+    "file": "bower_components/mobiscroll/js/mobiscroll.custom-3.0.0-beta6.js",
+    "hash": "bee891f10aadc4b9cc56b2894fb59266"
+  },
+  {
+    "file": "bower_components/mobiscroll/js/mobiscroll.custom-3.0.0-beta6.min.js",
+    "hash": "07cc19982e75e1cc58231d615a3f597e"
+  },
+  {
+    "file": "bower_components/ng-material-floating-button/mfb/dist/mfb.min.css",
+    "hash": "9c46b956fd4e66f3eaeb86e4767859a7"
+  },
+  {
+    "file": "bower_components/ng-material-floating-button/src/mfb-directive.js",
+    "hash": "d25cf9bfb7f1281ba7011f08423e5321"
+  },
+  {
+    "file": "bower_components/ngCordova/ng-cordova.min.js",
+    "hash": "133a528ed78cbd86c88377d106a3e645"
+  },
+  {
+    "file": "bower_components/oclazyload/dist/ocLazyLoad.min.js",
+    "hash": "bb61470daefcdb8291533f8eee658821"
+  },
+  {
+    "file": "bower_components/patternLock/patternLock.css",
+    "hash": "92299b8d046d5b1e2bd9eae8968b696a"
+  },
+  {
+    "file": "bower_components/patternLock/patternLock.min.js",
+    "hash": "2ddd2b8e330977b47521c0c716b109a4"
+  },
+  {
+    "file": "build.html",
+    "hash": "436d5577df8bf67cda1ea0523776531a"
+  },
+  {
+    "file": "cordova.js",
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  {
+    "file": "fonts/fontawesome-webfont.eot",
+    "hash": "45c73723862c6fc5eb3d6961db2d71fb"
+  },
+  {
+    "file": "fonts/fontawesome-webfont.svg",
+    "hash": "f8c0645fc719130835622e71478843ea"
+  },
+  {
+    "file": "fonts/fontawesome-webfont.ttf",
+    "hash": "7c87870ab40d63cfb8870c1f183f9939"
+  },
+  {
+    "file": "fonts/fontawesome-webfont.woff",
+    "hash": "dfb02f8f6d0cedc009ee5887cc68f1f3"
+  },
+  {
+    "file": "fonts/fontawesome-webfont.woff2",
+    "hash": "4b5a84aaf1c9485e060c503a0ff8cadb"
+  },
+  {
+    "file": "fonts/FontAwesome.otf",
+    "hash": "668743fe7258676f8ef8f9b47d2a623e"
+  },
+  {
+    "file": "fonts/ionicons.eot",
+    "hash": "2c2ae068be3b089e0a5b59abb1831550"
+  },
+  {
+    "file": "fonts/ionicons.svg",
+    "hash": "c037dbbc0e6790f30e824a50010df5fb"
+  },
+  {
+    "file": "fonts/ionicons.ttf",
+    "hash": "24712f6c47821394fba7942fbb52c3b2"
+  },
+  {
+    "file": "fonts/ionicons.woff",
+    "hash": "05acfdb568b3df49ad31355b19495d4a"
+  },
+  {
+    "file": "images/back.png",
+    "hash": "bd9702c69c9b172afde97f47a2ff906f"
+  },
+  {
+    "file": "images/child.jpg",
+    "hash": "7c3c10993b6f396f988fbfac8fce4bfc"
+  },
+  {
+    "file": "images/code.jpg",
+    "hash": "23b687a082032f92ea5fbe56bd3fe4c6"
+  },
+  {
+    "file": "images/common/head.jpg",
+    "hash": "670c9f6e15964e51525fd55271f343d7"
+  },
+  {
+    "file": "images/common/maps_gps.png",
+    "hash": "61543b3b68edbee854f9c1b3b033e106"
+  },
+  {
+    "file": "images/head.jpg",
+    "hash": "21aaf9f5a65df473c9bcc24db383342e"
+  },
+  {
+    "file": "images/home/item1.jpg",
+    "hash": "55f5c9a94fb8b4e82bf7cbd7815e8a02"
+  },
+  {
+    "file": "images/home/item2.jpg",
+    "hash": "99b72f89988ead6e731d9556228f55b8"
+  },
+  {
+    "file": "images/home/item3.jpg",
+    "hash": "2ecd0ed78c4095761ca513599c56abf9"
+  },
+  {
+    "file": "images/home/slide1.png",
+    "hash": "fa43400fce5ee580588fc855991a1c95"
+  },
+  {
+    "file": "images/loading.gif",
+    "hash": "e800e1ede11b3a7e556d09ff83bb6e2f"
+  },
+  {
+    "file": "images/login/lock-bg.jpg",
+    "hash": "648f0f67fccc757d5cab6abd950ce054"
+  },
+  {
+    "file": "images/login/login_pwd.png",
+    "hash": "b12ae64ea68a9b392ba7cb9281a77eb2"
+  },
+  {
+    "file": "images/login/login_user.png",
+    "hash": "a99dc8b8cc6e25579eb6e26fddcf438c"
+  },
+  {
+    "file": "images/logo.png",
+    "hash": "31dd5602a31a43575d4f009b2a315708"
+  },
+  {
+    "file": "images/product.jpg",
+    "hash": "15e6751ab4bcb7c13b76213ae38f5f87"
+  },
+  {
+    "file": "images/work.jpg",
+    "hash": "d7c12290fb2c169e7e1f34c7081f07ef"
+  },
+  {
+    "file": "index.html",
+    "hash": "fed340f1f9a8db6f38852ffb15ae6abb"
+  },
+  {
+    "file": "lxtClient-1.0.0.min.css",
+    "hash": "ddbabdd8eb504acbd3360e6dc47b5d72"
+  },
+  {
+    "file": "lxtClient-1.0.0.min.js",
+    "hash": "db5dc755e0f313d14d7ea115f7c84229"
+  },
+  {
+    "file": "modules/base/app.js",
+    "hash": "bcc5af871c2ed111807526d16785457d"
+  },
+  {
+    "file": "modules/base/directives/echarts.js",
+    "hash": "bca0ecd60540bd9dd8cdc82e58fece75"
+  },
+  {
+    "file": "modules/base/directives/input-color.js",
+    "hash": "586ec305df488b92b1365febed7c5c19"
+  },
+  {
+    "file": "modules/base/directives/input-datetime.js",
+    "hash": "2013368acd989be25949d6f9fb8fe5a3"
+  },
+  {
+    "file": "modules/base/directives/input-select.js",
+    "hash": "94221c4aff9ccafb902abe116d027554"
+  },
+  {
+    "file": "modules/base/directives/input-treelist.js",
+    "hash": "80484281646b521ef003c0466ee91005"
+  },
+  {
+    "file": "modules/base/directives/patternLock.js",
+    "hash": "92b4e8f83ea27b572365ea081eef4443"
+  },
+  {
+    "file": "modules/base/directives/toast.js",
+    "hash": "bdb24ca23371d5e0e118d8207b79002a"
+  },
+  {
+    "file": "modules/base/filters/filter.js",
+    "hash": "31598165215247826462d00a62d2233e"
+  },
+  {
+    "file": "modules/base/utils/cache.js",
+    "hash": "9b43b847aa799acacd80cb2f79190500"
+  },
+  {
+    "file": "modules/base/utils/format.js",
+    "hash": "1d6e4f885e5f6c191d5b3b2c8a420bab"
+  },
+  {
+    "file": "modules/base/utils/http.js",
+    "hash": "1085679fe8ba27dd855d17313e370217"
+  },
+  {
+    "file": "modules/base/utils/interceptor.js",
+    "hash": "c6f73b20a03ebf102348807e794620b2"
+  },
+  {
+    "file": "modules/base/utils/security.js",
+    "hash": "c880694f07cd41776ee6b28bc292554d"
+  },
+  {
+    "file": "modules/base/utils/service.js",
+    "hash": "2393128dc11aa9a676d57de4c242dff9"
+  },
+  {
+    "file": "modules/base/utils/utils.js",
+    "hash": "44ad5e062c27ea28242c8e89768708a6"
+  },
+  {
+    "file": "modules/sample/controllers/calendarController.js",
+    "hash": "68259e8bdf76d2145fe8f84e2cfd5d0f"
+  },
+  {
+    "file": "modules/sample/controllers/chartController.js",
+    "hash": "19908fcd79e0749a749743a39aa0289f"
+  },
+  {
+    "file": "modules/sample/controllers/contactsController.js",
+    "hash": "efad68e0cfeda51e9ac4b58d8aaaf0e7"
+  },
+  {
+    "file": "modules/sample/controllers/demoController.js",
+    "hash": "bb887923ae3d21e68c304b75b37c77c8"
+  },
+  {
+    "file": "modules/sample/controllers/formController.js",
+    "hash": "dfbb3816d07e992bf141d868f3585794"
+  },
+  {
+    "file": "modules/sample/controllers/homeController.js",
+    "hash": "4418d17291ca8815de595d8f5e853e84"
+  },
+  {
+    "file": "modules/sample/controllers/listController.js",
+    "hash": "0f2eab5e9ec2d2499f3f8068a4300c2d"
+  },
+  {
+    "file": "modules/sample/controllers/liveController.js",
+    "hash": "9b85a721dae05bfba759ddf682e92cef"
+  },
+  {
+    "file": "modules/sample/controllers/loadingController.js",
+    "hash": "d3f8accf007909b6d435de4ec146f6d7"
+  },
+  {
+    "file": "modules/sample/controllers/loginController.js",
+    "hash": "00d4c429994edb368a468df98a6d7382"
+  },
+  {
+    "file": "modules/sample/controllers/mapController.js",
+    "hash": "42cec5d4213e66d09bfe3e2c12a045cf"
+  },
+  {
+    "file": "modules/sample/controllers/tabController.js",
+    "hash": "db5f1deb4791c70cc7427bc86a663527"
+  },
+  {
+    "file": "modules/sample/data/address.json",
+    "hash": "af2f8804df880e11c2cd9920e27624ec"
+  },
+  {
+    "file": "modules/sample/data/city.json",
+    "hash": "a8d6c5fac6b0e70dd65b757eb3d3a3d3"
+  },
+  {
+    "file": "modules/sample/data/contacts.json",
+    "hash": "ac898b572f7ab8557cfaee6cf2ceee98"
+  },
+  {
+    "file": "modules/sample/data/lbpicture.json",
+    "hash": "4d48f8a6c6e6909ac9d90c86b7e3e2b0"
+  },
+  {
+    "file": "modules/sample/sampleModule.js",
+    "hash": "4572e8c70ccee23286d91b75f2f0adfe"
+  },
+  {
+    "file": "modules/sample/service/sampleService.js",
+    "hash": "18df68a1c5246d86f9de617cb6e4c1db"
+  },
+  {
+    "file": "modules/sample/views/calendar.html",
+    "hash": "4006423e683f5bd9f7cca1901631e69e"
+  },
+  {
+    "file": "modules/sample/views/chart.html",
+    "hash": "05be0978c9a48c1eb1a2f6acd0296d7c"
+  },
+  {
+    "file": "modules/sample/views/common/baiduMap.html",
+    "hash": "cc7c9fe21238c9325902401c4c3cc0fd"
+  },
+  {
+    "file": "modules/sample/views/contacts.html",
+    "hash": "2a0d60453cffef472de13a3b0a8edebc"
+  },
+  {
+    "file": "modules/sample/views/form.html",
+    "hash": "cb9353adb36d24d838729346b66b7326"
+  },
+  {
+    "file": "modules/sample/views/home.html",
+    "hash": "5ae56c37dd9408b958cf8c9a4ef243f9"
+  },
+  {
+    "file": "modules/sample/views/list.html",
+    "hash": "36d2b71348e722b52ae97db755b52869"
+  },
+  {
+    "file": "modules/sample/views/live.html",
+    "hash": "f278172e2adbec7d7f432f9f431c846e"
+  },
+  {
+    "file": "modules/sample/views/loading.html",
+    "hash": "7b2066e72357434875fc3b25f195a090"
+  },
+  {
+    "file": "modules/sample/views/login.html",
+    "hash": "5d18c82332febc3f6b32d2e2e45ceb3a"
+  },
+  {
+    "file": "modules/sample/views/map.html",
+    "hash": "8903975c557a4053a5a84a92316c388b"
+  },
+  {
+    "file": "modules/sample/views/patternLock.html",
+    "hash": "fb766c06bf4fcbff7f4caf975d6316ea"
+  },
+  {
+    "file": "modules/sample/views/player.html",
+    "hash": "7f5a6f54ce1d239cf824ac0c68bc31d4"
+  },
+  {
+    "file": "modules/sample/views/tab.html",
+    "hash": "a18af31b8f9c22f41633837906a39728"
+  },
+  {
+    "file": "player/HLS.swf",
+    "hash": "6a123dc799a3ffce3beea0ef52b39cb8"
+  },
+  {
+    "file": "player/HLSPlayer.jpg",
+    "hash": "249e1de34e78c1f22930c1874f6983ef"
+  },
+  {
+    "file": "player/HLSPlayer.swf",
+    "hash": "b0eaca1f5af41dbd16dfe472869afbe4"
+  },
+  {
+    "file": "player/HLSPlayerB.jpg",
+    "hash": "35310b2cf914f037e98ba4b04c8f484d"
+  },
+  {
+    "file": "player/images/common.css",
+    "hash": "447f0a3ff8a2baaac40c4dcfdfd7bdd5"
+  },
+  {
+    "file": "player/images/CuLogo.jpg",
+    "hash": "eac2557e94087920c1bffca121f4ff59"
+  },
+  {
+    "file": "player/images/intropic.jpg",
+    "hash": "ff45976cb50bc8c276c68bcbb453a0f0"
+  },
+  {
+    "file": "player/images/logo.jpg",
+    "hash": "eac2557e94087920c1bffca121f4ff59"
+  },
+  {
+    "file": "player/images/logo.psd",
+    "hash": "c0589b0c1fcd8dfaf2971c7387859a6c"
+  },
+  {
+    "file": "player/images/logo2.jpg",
+    "hash": "4d621e40a1cb896327c35e10e6edcb80"
+  },
+  {
+    "file": "player/images/mini.css",
+    "hash": "49fb5b0123373d2878ff8fb34b72ca85"
+  },
+  {
+    "file": "player/images/search.jpg",
+    "hash": "3971fea6772bdd8434f053ad064788b5"
+  },
+  {
+    "file": "player/images/start.jpg",
+    "hash": "f50730266588e6e8161f8ee2f75447ff"
+  },
+  {
+    "file": "player/images/vico.png",
+    "hash": "c66e5c9944576c897116a3dde4c27b1c"
+  },
+  {
+    "file": "player/js/hls.min.js",
+    "hash": "0de42e76f807b8137beb06be74c9562f"
+  },
+  {
+    "file": "styles/animate.min.css",
+    "hash": "b7d28487cf7d0845cfb3cfc246ef4c51"
+  },
+  {
+    "file": "styles/main.css",
+    "hash": "e0bec4c2679c6be12adbd069a985317e"
+  }
+]

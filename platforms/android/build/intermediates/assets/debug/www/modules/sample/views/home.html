@@ -1,0 +1,156 @@
+<ion-view view-title="Lxt">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-positive icon ion-navicon-round"></button>
+    </ion-nav-buttons>
+    
+    <toast ng-model="toast" position="bottom"></toast>
+    <ion-content class="has-header" overflow-scroll="false" on-scroll="vc.onHomeScroll($event)" delegate-handle="homeScroll">
+        <!-- 轮播 -->
+        <ion-slide-box does-continue="true" auto-play="true" style="width:100%;margin-bottom:-5px;">
+            <ion-slide ng-repeat="item in vo.slides track by $index">
+                <img style="width:100%;" ng-src="{{item.lbpicUrl}}">
+            </ion-slide>
+        </ion-slide-box>
+        
+        <!-- 功能菜单 -->
+        <table class="icon-table text-content">
+            <tr>
+                <td>
+                    <div ui-sref="list">
+                        <i class="fa fa-fw fa-list" style="color:#ff7f50"></i><br/>
+                        <span>动态列表</span>
+                    </div>
+                </td>
+                <td>
+                    <div ui-sref="chart">
+                        <i class="fa fa-fw fa-bar-chart" style="color:#87cefa"></i><br/>
+                        <span>动态图表</span>
+                    </div>
+                </td>
+                <td>
+                    <div ui-sref="contacts">
+                        <i class="fa fa-fw fa-book" style="color:#da70d6"></i><br/>
+                        <span>通讯录</span>
+                    </div>
+                </td>
+                <td>
+                    <div ui-sref="form">
+                        <i class="fa fa-fw fa-list-alt" style="color:#32cd32"></i><br/>
+                        <span>表单</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div ui-sref="tab">
+                        <i class="fa fa-fw fa-folder" style="color:#6495ed"></i><br/>
+                        <span>选项卡</span>
+                    </div>
+                </td>
+                <td>
+                    <div ui-sref="login">
+                        <i class="fa fa-fw fa-lock" style="color:#ff69b4"></i><br/>
+                        <span>登录</span>
+                    </div>
+                </td>
+                <td>
+                    <div ui-sref="loading">
+                        <i class="fa fa-fw fa-spinner fa-pulse" style="color:#40e0d0"></i><br/>
+                        <span>加载图标</span>
+                    </div>
+                </td>
+                <td>
+                    <div ui-sref="live">
+                        <i class="fa fa-fw fa-video-camera" style="color:#cd5c5c"></i><br/>
+                        <span>在线直播</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div ui-sref="calendar">
+                        <i class="fa fa-fw fa-calendar" style="color:#ffa500"></i><br/>
+                        <span>日历</span>
+                    </div>
+                </td>
+                <td>
+                    <div ui-sref="map">
+                        <i class="fa fa-fw fa-map" style="color:#40e0d0"></i><br/>
+                        <span>地图</span>
+                    </div>
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+        </table>
+        
+        <div class="list">
+            <div class="item item-divider positive">
+                <i class="ion-star"></i> 推荐产品
+            </div>
+            <div class="item padding">
+                <ion-slide-box show-pager="false">
+                    <ion-slide ng-repeat="item in vo.slides">
+                        <div style="display:flex;justify-content:space-between;">
+                            <div style="text-align:center;">
+                                <img style="width:90%" ng-src="{{item.lbpicUrl}}">
+                                <p>产品{{$index+1}}</p>
+                            </div>
+                            <div style="text-align:center;">
+                                <img style="width:90%" ng-src="{{item.lbpicUrl}}">
+                                <p>产品{{$index+1}}</p>
+                            </div>
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+            </div>
+        </div>
+    </ion-content>
+    
+    <style>
+        .slider-pager .slider-pager-page{
+            color:white!important;
+        }
+        .slider-slide img{
+            width:100%;
+        }
+        .slide-banner{
+            position:absolute;
+            top:20px;
+            padding:0 15px;
+            height:30px;
+            line-height:30px;
+            width:100%;
+            font-size:14px;
+            color:#DDD;
+        }
+        .slide-icon{
+            width:22px;
+            vertical-align:middle;
+        }
+        .icon-table{
+            width:100%;
+            text-align:center;
+            background:white;
+            font-size:13px;
+            font-family: '黑体';
+            border:none;
+        }
+        .icon-table td{
+            height:80px;
+            vertical-align:middle;
+            border:1px solid #f0f0f0;
+        }
+        .icon-table td i{
+            font-size:24px;
+        }
+        .icon-table img{
+            width:32px;
+            height:32px;
+        }
+    </style>
+</ion-view>

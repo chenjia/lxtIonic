@@ -1,0 +1,18 @@
+<ion-view view-title="在线直播">
+    <ion-nav-buttons side="left">
+        <button ui-sref="home" class="button button-positive icon ion-chevron-left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button ng-click="vc.go('modules/sample/views/player.html')" class="button button-positive icon fa fa-play"></button>
+    </ion-nav-buttons>
+    
+    <ion-content>
+        <div class="list form">
+            <label class="item item-input">
+                <span class="input-label">IP</span>
+                <input type="text" style="font-size:20px;" ng-model="vo.ip" value="http://172.16.117.5:5080/live/test.m3u8">
+            </label>
+        </div>
+        <iframe ng-if="vo.showPlay" style="width:100%;min-height:300px;" src="modules/sample/views/player.html" frameborder="0"></iframe>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,65 @@
+<ion-view view-title="动态列表">
+    <ion-nav-buttons side="left">
+        <button ui-sref="home" class="button button-positive icon ion-chevron-left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button ng-click="vc.showMenu($event)" class="button button-positive icon fa fa-ellipsis-h"></button>
+    </ion-nav-buttons>
+    
+	<ion-content class="has-header">
+		<ion-refresher on-refresh="vc.doRefresh()" pulling-text="下拉刷新" refreshing-text="刷新中" spinner>  
+		</ion-refresher>
+		<ion-list show-delete="vo.showDelete" show-reorder="vo.showReorder" can-swipe="true">
+			<ion-item ng-repeat="item in vo.items track by item.id" class="item-icon-right item-remove-animate">
+				Hello, {{item.name}}!
+				<i ng-click="vc.showOptions($event)" class="icon ion-ios-arrow-right"></i>
+				<ion-option-button class="button-balanced" ng-click="share(item)">
+					<i class="ion-android-share-alt padding"></i>分享
+				</ion-option-button>
+				<ion-option-button class="button-royal" ng-click="edit(item)">
+					<i class="ion-edit padding"></i>编辑
+				</ion-option-button>
+				<ion-delete-button class="ion-minus-circled" ng-click="vc.doDelete($index)">
+				</ion-delete-button>
+				<ion-reorder-button class="ion-navicon" on-reorder="vc.reorderItem(item, $fromIndex, $toIndex)">
+				</ion-reorder-button>
+			</ion-item>
+		</ion-list>
+		<div ng-show="vo.loading" style="position:static;font-size:16px;z-index:9999;margin:30px 0 -70px 0;padding-bottom:10px;text-align:center;">加载中</div>
+		<ion-infinite-scroll on-infinite="vc.loadMore()" spinner>
+		</ion-infinite-scroll>
+	</ion-content>
+	<script id="menu.html" type="text/ng-template">
+		<ion-popover-view>
+			<ion-content>
+				<div class="list">
+					<a class="item balanced" ng-click="vc.add()"><i class="fa fa-plus fa-fw"></i>　新 增</a>
+					<a class="item assertive" ng-click="vc.delete()"><i class="fa fa-minus fa-fw"></i>　删 除</a>
+					<a class="item royal" ng-click="vc.update()"><i class="fa fa-edit fa-fw"></i>　修 改</a>
+					<a class="item energized" ng-click="vc.reorder()"><i class="fa fa-sort-amount-asc fa-fw"></i>　排 序</a>
+					<a class="item calm" ng-click="vc.search()"><i class="fa fa-search fa-fw"></i>　搜 索</a>
+				</div>
+			</ion-content>
+		</ion-popover-view>
+	</script>
+	<script id="details.html" type="text/ng-template">
+		<ion-modal-view>
+			<div class="bar bar-header bar-positive">
+				<h1 class="title">{{vo.title}}</h1>
+			</div>
+			<ion-content class="has-header">
+				<div class="list">
+					<label class="item item-input">
+						<span class="input-label">名称</span>
+						<input type="text" ng-model="vo.item" placeholder="item">
+					</label>
+					<div class="item">
+						<a ng-click="vc.doAdd()" class="button button-block button-positive">
+							<i class="fa fa-fw fa-plus"></i>添加
+						</a>
+					</div>
+				</div>
+			</ion-content>
+		</ion-modal-view>
+	</script>
+</ion-view>

@@ -18,7 +18,19 @@ angular.module('app').directive('inputColor', ['$compile', 'utils', function($co
 					display:'bottom',
 					placeholder:'请选择颜色',
 					headerText:attr.headerText||'请选择',
-					buttons:['clear','cancel','set'],
+					buttons:[{
+						text:'取消',
+						handler:'cancel',
+						icon:'close'
+					},{
+						text:'清空',
+						handler:'clear',
+						icon:'loop2'
+					},{
+						text:'确定',
+						handler:'set',
+						icon:'checkmark'
+					}],
 					onSet: function(value, inst) {
 						// scope.ngModel = inst.getVal();
 						// scope.$apply();

@@ -2,21 +2,33 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
 	(function init() {
 		$scope.vo = {};
 		function random(){
-		    var r = Math.round(Math.random() * 100);
-		    return (r * (r % 2 == 0 ? 1 : -1));
+		    return Math.round(Math.random() * 10);
 		}
 
-		function randomDataArray() {
+		function randomDataArray(length) {
 		    var d = [];
-		    var len = 100;
+		    var len = length||100;
 		    while (len--) {
-		        d.push([
-		            random(),
-		            random(),
-		            Math.abs(random()),
-		        ]);
+		        d.push(len*100+random());
 		    }
 		    return d;
+		}
+
+		var yingbei = randomDataArray(45);
+		var yibei = (function(){
+			var array = randomDataArray(45);
+        	for(var i=0;i<array.length;i++){
+        		if(i>10){
+        			array[i] = 200;
+        		}else{
+        			array[i] = 1200-i*100;
+        		}
+        	}
+        	return array;
+		})();
+		var ce = [];
+		for(var i=0;i<yingbei.length;i++){
+			ce[i] = yingbei[i]-yibei[i];
 		}
 
         var options = {
@@ -1057,15 +1069,13 @@ angular.module('app').controller('chartController',['$rootScope','$scope','utils
         	}
         },1000);
 
-        var array = ['barOptions','hbarOptions','lineOptions','pieOptions','doughnutOptions','radarOptions','areaOptions','mapOptions','gaugeOptions','funnelOptions'],i=0;
+        var array = ['fyceOptions','ybfyOptions','barOptions','hbarOptions','lineOptions','pieOptions','doughnutOptions','radarOptions','areaOptions','gaugeOptions','funnelOptions','mapOptions'],i=0;
 
         utils.$timeout(function(){
         	var optionInterval = utils.$interval(function(){
         		if($rootScope.state.name == 'chart'){
-            		utils.$location.hash(array[i]);
-	                utils.$ionicScrollDelegate.anchorScroll(true);
 	                utils.$timeout(function(){
-	                	$scope.vo[array[i]] = options[array[i]];
+	                	$scope.vo.options = options[array[i]];
 	                	i++;
 	                },1000);
 					if(i==array.length){

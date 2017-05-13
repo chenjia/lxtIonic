@@ -4,7 +4,7 @@ var Config = {
     key:'ed26d4cd99aa11e5b8a4c89cdc776729',
     random:(''+Math.random()).substr(2)
 };
-var app = angular.module('app',['ionic', 'oc.lazyLoad', 'app.route', 'ngCordova','utils']);
+var app = angular.module('app',['ionic', 'oc.lazyLoad', 'app.route', 'ngCordova','ionic-native-transitions','utils']);
 angular.module('app.route',[]).config(['$urlRouterProvider','$ocLazyLoadProvider','$httpProvider',function($urlRouterProvider,$ocLazyLoadProvider,$httpProvider){
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -50,14 +50,36 @@ angular.module('app.route',[]).config(['$urlRouterProvider','$ocLazyLoadProvider
     });
 }]);
 
-app.config(['$ionicConfigProvider',function($ionicConfigProvider){
+app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($ionicConfigProvider,$ionicNativeTransitionsProvider){
     $ionicConfigProvider.navBar.alignTitle('center');
     $ionicConfigProvider.views.swipeBackEnabled(false);
-    $ionicConfigProvider.views.maxCache(1);
+    $ionicConfigProvider.views.maxCache(5);
     $ionicConfigProvider.views.forwardCache(true);
     $ionicConfigProvider.form.checkbox('circle');
-    $ionicConfigProvider.form.toggle('small');
+    $ionicConfigProvider.form.toggle('large');
     $ionicConfigProvider.spinner.icon('bubbles');
+
+    $ionicNativeTransitionsProvider.setDefaultOptions({
+        duration: 400, // in milliseconds (ms), default 400,
+        slowdownfactor: 4, // overlap views (higher number is more) or no overlap (1), default 4
+        iosdelay: -1, // ms to wait for the iOS webview to update before animation kicks in, default -1
+        androiddelay: -1, // same as above but for Android, default -1
+        winphonedelay: -1, // same as above but for Windows Phone, default -1,
+        fixedPixelsTop: 0, // the number of pixels of your fixed header, default 0 (iOS and Android)
+        fixedPixelsBottom: 0, // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
+        triggerTransitionEvent: '$ionicView.afterEnter', // internal ionic-native-transitions option
+        backInOppositeDirection: false // Takes over default back transition and state back transition to use the opposite direction transition to go back
+    });
+
+    $ionicNativeTransitionsProvider.setDefaultTransition({
+        type: 'flip',
+        direction: 'left'
+    });
+
+    $ionicNativeTransitionsProvider.setDefaultBackTransition({
+        type: 'flip',
+        direction: 'right'
+    });
 }]).run(['$rootScope','$ionicPlatform','$state','utils',function ($rootScope, $ionicPlatform,$state,utils) {
     utils.$ionicPlatform.ready(function(){
         if(screen.lockOrientation){
@@ -315,14 +337,7 @@ app.config(['$ionicConfigProvider',function($ionicConfigProvider){
             'echarts',
             'patternLock',
             'animate'
-            // 'modules/base/directives/input-datetime.js',
-            // 'modules/base/directives/input-select.js',
-            // 'modules/base/directives/input-treelist.js',
-            // 'modules/base/directives/input-color.js',
-            // 'modules/base/directives/toast.js',
-            // 'modules/sample/controllers/formController.js'
         ]);
-        // utils.$templateRequest('modules/sample/views/form.html');
         utils.$timeout(function(){
             $rootScope.init = 1;
         },500);

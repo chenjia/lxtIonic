@@ -35,8 +35,7 @@ angular.module('utils',[
 	
 	'$cordovaFileTransfer',
 	'$cordovaNetwork',
-	'$cordovaCamera',
-	'$cordovaGeolocation',function(format,cache,http,security,$ocLazyLoad,$filter,$state,$timeout,$interval,$location,$compile,$templateRequest,$ionicPlatform,$ionicHistory,$ionicPosition,$ionicScrollDelegate,$ionicNavBarDelegate,$ionicModal,$ionicLoading,$ionicPopup,$ionicPopover,$ionicViewSwitcher,$ionicSlideBoxDelegate,$ionicSideMenuDelegate,$cordovaFileTransfer,$cordovaNetwork,$cordovaCamera,$cordovaGeolocation){
+	'$cordovaGeolocation',function(format,cache,http,security,$ocLazyLoad,$filter,$state,$timeout,$interval,$location,$compile,$templateRequest,$ionicPlatform,$ionicHistory,$ionicPosition,$ionicScrollDelegate,$ionicNavBarDelegate,$ionicModal,$ionicLoading,$ionicPopup,$ionicPopover,$ionicViewSwitcher,$ionicSlideBoxDelegate,$ionicSideMenuDelegate,$cordovaFileTransfer,$cordovaNetwork,$cordovaGeolocation){
 	return {
 		format:format,
 		cache:cache,
@@ -67,7 +66,6 @@ angular.module('utils',[
 
 		$cordovaFileTransfer:$cordovaFileTransfer,
 		$cordovaNetwork:$cordovaNetwork,
-		$cordovaCamera:$cordovaCamera,
 		$cordovaGeolocation:$cordovaGeolocation
 	};
 }]);

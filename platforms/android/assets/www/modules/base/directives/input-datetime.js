@@ -15,13 +15,29 @@ angular.module('app').directive('inputDatetime', ['$compile', 'utils', function(
 				element = $(element[0]);
 
 				if(!attr.format || attr.format == 'yyyy-MM-dd'){
+					var dateInstance;
 					var options = {
 						theme: 'android-holo-light',
 						lang: 'zh',
 						display:'bottom',
-						buttons:['clear','cancel','set'],
+						buttons:[{
+							text:'取消',
+							handler:'cancel',
+							icon:'close'
+						},{
+							text:'清空',
+							handler:'clear',
+							icon:'loop2'
+						},{
+							text:'确定',
+							handler:'set',
+							icon:'checkmark'
+						}],
 						dateFormat:'yy-mm-dd',
-						onSet: function(value, inst) {
+						onInit:function(event, inst){
+							dateInstance = inst;
+						},
+						onSet:function(value, inst) {
 							scope.ngModel = value.valueText;
 							scope.$apply();
 						},
@@ -35,6 +51,11 @@ angular.module('app').directive('inputDatetime', ['$compile', 'utils', function(
 					}
 					var instance = element.mobiscroll();
 					instance.date(options);
+					scope.$watch('ngModel',function(value){
+						if(value){
+							dateInstance.setVal(value);
+						}
+					});
 					scope.$watch('min',function(value){
 						if(value){
 							options.min = utils.format.parseDate(value);
@@ -67,9 +88,24 @@ angular.module('app').directive('inputDatetime', ['$compile', 'utils', function(
 						theme: 'android-holo-light',
 						lang: 'zh',
 						display:'bottom',
-						buttons:['clear','cancel','set'],
+						buttons:[{
+							text:'取消',
+							handler:'cancel',
+							icon:'close'
+						},{
+							text:'清空',
+							handler:'clear',
+							icon:'loop2'
+						},{
+							text:'确定',
+							handler:'set',
+							icon:'checkmark'
+						}],
 						dateFormat:'yy-mm-dd',
 						timeFormat:'HH:ii',
+						onInit:function(event, inst){
+							datetimeInstance = inst;
+						},
 						onSet: function(value, inst) {
 							scope.ngModel = value.valueText;
 							scope.$apply();
@@ -84,6 +120,11 @@ angular.module('app').directive('inputDatetime', ['$compile', 'utils', function(
 					}
 					var instance = element.mobiscroll();
 					instance.datetime(options);
+					scope.$watch('ngModel',function(value){
+						if(value){
+							datetimeInstance.setVal(value);
+						}
+					});
 					scope.$watch('min',function(value){
 						if(value){
 							options.min = utils.format.parseDate(value,attr.format);

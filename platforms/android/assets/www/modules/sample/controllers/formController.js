@@ -1,4 +1,11 @@
 angular.module('app').controller('formController',['$rootScope','$scope','utils',function($rootScope,$scope,utils){
+    $scope.settings = {
+        theme: 'ios',
+        display: 'bottom',
+        buttons: [],
+        cssClass: 'md-sl-widget'
+    };
+
     $scope.vo = {
         startDate:'2010-01-01',
         endDate:'2015-12-12',
@@ -18,10 +25,10 @@ angular.module('app').controller('formController',['$rootScope','$scope','utils'
                 text:'上海',
                 children:[{
                     value:'010101',
-                    text:'浦东'
+                    text:'浦东新区'
                 },{
                     value:'010102',
-                    text:'徐汇'
+                    text:'徐汇区'
                 }]
             }]
         },{
@@ -49,9 +56,63 @@ angular.module('app').controller('formController',['$rootScope','$scope','utils'
                 }]
             }]
         }],
-        gender:true,
+        job:'020202',
+        jobData:[{
+            value:'01',
+            text:'一般',
+            children:[{
+                value:'0101',
+                text:'机关团体公司行号',
+                children:[{
+                    value:'010101',
+                    text:'内勤人员'
+                },{
+                    value:'010102',
+                    text:'外勤人员（从事联系工作）'
+                }]
+            }]
+        },{
+            value:'02',
+            text:'农牧业',
+            children:[{
+                value:'0201',
+                text:'农业',
+                children:[{
+                    value:'020101',
+                    text:'农场经营者（不亲自作业）'
+                },{
+                    value:'020102',
+                    text:'农夫'
+                }]
+            },{
+                value:'0202',
+                text:'牧业',
+                children:[{
+                    value:'020201',
+                    text:'畜牧场经营者(不亲自作业)'
+                },{
+                    value:'020202',
+                    text:'畜牧工作人员'
+                },{
+                    value:'020203',
+                    text:'畜牧场经营者(不亲自作业)'
+                },{
+                    value:'020204',
+                    text:'畜牧工作人员'
+                },{
+                    value:'020205',
+                    text:'畜牧场经营者(不亲自作业)'
+                },{
+                    value:'020206',
+                    text:'畜牧工作人员'
+                }]
+            }]
+        }],
+        color:'#ff00ff',
+        gender:'M',
         score:3.5
     };
+
     $scope.vc = {
         addToast:function(){
             $scope.vo.toastText = [{text:'toast text'+Math.random()}];

@@ -22,6 +22,5 @@ angular.module('app').controller('homeController',['$rootScope','$scope','utils'
 
     $scope.ready = function(){
         // $scope.vc.slideBox();
-        
     }();
 }]);

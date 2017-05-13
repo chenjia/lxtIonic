@@ -61,6 +61,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         resolve: {
             load: ['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
+                    'echarts',
                     'modules/sample/controllers/chartController.js'
                 ]);
             }]
@@ -77,6 +78,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
                     'rating',
                     'modules/base/directives/input-datetime.js',
                     'modules/base/directives/input-select.js',
+                    'modules/base/directives/input-sfz.js',
                     'modules/base/directives/input-treelist.js',
                     'modules/base/directives/input-color.js',
                     'modules/base/directives/toast.js',

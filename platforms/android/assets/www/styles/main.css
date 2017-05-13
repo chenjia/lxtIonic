@@ -14,6 +14,12 @@
 	display:flex;
 }
 /*
+	字体大小
+*/
+.font20{
+	font-size:20px!important;
+}
+/*
 	侧滑菜单动画
 */
 .list .item.item-accordion {
@@ -71,6 +77,9 @@
 	margin:0 8px;
 	color:white;
 }
+.toggle .handle{
+	transition: .2s ease-out;
+}
 .toast-box{
     position:absolute;
     top:45%;
@@ -110,4 +119,53 @@
 }
 .toast-box .toast-item.toast-error{
 	background-color: rgba(228,33,18, 0.8);
+}
+.input-label+input{
+	padding:0 6px 0 145px;
+	text-align:right;
+	right:10px;
+	position:absolute;
+}
+.item-icon-right input{
+	padding-right:36px;
+}
+.mbsc-android-holo .mbsc-sc-whl-l {
+    border-top: 2px solid #31b7e8!important;
+    border-bottom: 2px solid #31b7e8!important;
+}
+.mbsc-sc-lbl{
+	line-height:1.5em!important;
+	font-size: 1em!important;
+	color:#31b7e8!important;
+}
+.mbsc-np-del:before{
+	color:#31b7e8!important;
+}
+.mbsc-np .mbsc-fr-w{
+	width:280px!important;
+}
+.mbsc-np-dsp{
+	font-size:18px!important;
+	color:#31b7e8!important;
+}
+.mbsc-np-ph{
+	margin-left:1px;
+}
+.mbsc-fr-hdr{
+	font-size:16px!important;
+	background:#31b7e8!important;
+	color:white!important;
+	white-space:nowrap;
+}
+.mbsc-fr-btn{
+	color:#31b7e8!important;
+}
+.mbsc-sc-itm{
+	text-overflow:clip!important;
+}
+.mbsc-fr-btn-c .mbsc-fr-btn{
+	color:#e42112!important;
+}
+.mbsc-fr-btn-s .mbsc-fr-btn{
+	color:#33cd5f!important;
 }

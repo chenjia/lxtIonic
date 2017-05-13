@@ -8,23 +8,59 @@
     },
     "installed_plugins": {
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.lxtionic632707"
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.lxtionic632707"
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.lxtionic632707"
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.lxtionic632707"
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.lxtionic632707"
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.lxtionic632707"
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-hot-code-push-plugin": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "XWALK_VERSION": "23+",
+            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+            "XWALK_MODE": "embedded",
+            "XWALK_MULTIPLEAPK": "true",
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-plugin-screen-orientation": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "com.telerik.plugins.nativepagetransitions": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        }
+    }
 }

@@ -3,12 +3,120 @@
 
     <item
         is-multidex="false"
+        jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-fragment-25.1.1_d95b18595386e4ef182e8a1780fc7f640b67cc50.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="873daaba9b25e7f07376989b900fc46e99a9271c">
-        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_525e6d1ec096475c60a16ce79b3281ef82995a18.jar" />
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\CordovaLib-unspecified-debug_525e6d1ec096475c60a16ce79b3281ef82995a18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-v4-25.1.1_f1ee5278d21993c0242fd83fe296484be120d438.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-media-compat-25.1.1_9f865df0685a948f34c820999a5930b40969ae34.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\Users\chenjia\AppData\Local\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\support-annotations-25.1.1_d0a516ad0652ca4ec4cb1d4fd7ffc5d47175f591.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\chenjia\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.4\c5cd3347c0a86d0dcfbf3da593d8431d5a789d54\jackson-core-2.4.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\jackson-core-2.4.4_9b8a31f90f7046283de00a7d634554043bf594c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\chenjia\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.4\e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee\jackson-databind-2.4.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\jackson-databind-2.4.4_4c5f04cb3d6b7b5203e597a33314baf8829cd951.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-core-ui-25.1.1_768e30bbe554181f84c0bf3aa726680a555c1a87.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-compat-25.1.1_7f92bc48db803da159b58ddd21d67240693dc8cc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\chenjia\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\eventbus-3.0.0_fa939a8eb36035ed47125395bac0a4025354a03f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-core-utils-25.1.1_7d938d8beaaddaea1a6c1645bda3c65cbdb16a80.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\org.xwalk\xwalk_core_library\23.53.589.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="834071525d6d2707eb4c7f76b728d8cd14b17ae1">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\org.xwalk-xwalk_core_library-23.53.589.4_8a6a4c6e0006088b41eec25c7d564ecf9c31f56a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\chenjia\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.0\d6a66c7a5f01cf500377bd669507a08cfeba882a\jackson-annotations-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d6a66c7a5f01cf500377bd669507a08cfeba882a">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\jackson-annotations-2.4.0_0a2e6bdd678b805e19109947a04ee5e9202b98e1.jar" />
     </item>
 
 </items>

@@ -88,6 +88,8 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "cordova-hot-code-push-plugin/lxtionic679478-chcp.gradle"
+apply from: "cordova-plugin-crosswalk-webview/lxtionic679478-xwalk.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()

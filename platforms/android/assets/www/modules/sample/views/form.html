@@ -68,25 +68,33 @@
 					<i class="icon ion-ios-arrow-down"></i>
 				</label>
 				<label class="item item-input item-icon-right">
+					<span class="input-label">身份证</span>
+					<input input-sfz type="text" ng-model="vo.sfz">
+					<i class="icon fa fa-id-card-o font20"></i>
+				</label>
+				<label class="item item-input item-icon-right">
 					<span class="input-label">地址</span>
-					<ul input-treelist ng-model="vo.address" select-data="vo.addressData" option-text="text" option-value="value" option-child="children"></ul>
+					<ul input-treelist ng-model="vo.address" labels="省,市,区" select-data="vo.addressData" option-text="text" option-value="value" option-child="children"></ul>
 					<i class="icon ion-ios-arrow-down"></i>
 				</label>
-
+				<label class="item item-input item-icon-right">
+					<span class="input-label">职业</span>
+					<ul input-treelist ng-model="vo.job" filter="true" labels="职业大类,职业小类,职业名称" layout="fixed" select-data="vo.jobData" option-text="text" option-value="value" option-child="children"></ul>
+					<i class="icon ion-ios-arrow-down"></i>
+				</label>
 				<label class="item item-input item-icon-right">
 					<span class="input-label">颜色</span>
 					<input ng-style="{color:vo.color}" input-color ng-model="vo.color" type="text"/>
 					<i ng-style="{color:vo.color}" class="icon ion-android-color-palette"></i>
 				</label>
-
 				<div class="item item-toggle">
 					性别
 					<label class="toggle input-toggle">
-						<input type="checkbox" ng-model="vo.gender">
+						<input type="checkbox" ng-model="vo.gender" ng-true-value="'M'" ng-false-value="'F'">
 						<div class="track">
 							<span>男　女</span>
 							<div class="handle">
-								<i ng-class="{'fa-mars':vo.gender,'fa-venus':!vo.gender}" class="fa fa-fw"></i>
+								<i ng-class="{'fa-mars':vo.gender=='M','fa-venus':vo.gender=='F'}" class="fa fa-fw"></i>
 							</div>
 						</div>
 					</label>
@@ -110,7 +118,7 @@
 				<div class="item range range-balanced">
 					<i class="icon ion-ios-sunny-outline"></i>
 					<input type="range" ng-model="vo.light" name="volume" min="0" max="100">
-					<i class="icon ion-ios-sunny"></i>
+					<i class="icon ion-ios-sunny" style="color:#31b7e8;"></i>
 				</div>
 			</div>
 			<div class="list form">
@@ -150,14 +158,6 @@
 		</form>
 	</ion-content>
 	<style type="text/css">
-		.input-label+input{
-			padding-right:36px;
-			text-align:right;
-		}
-		.item-icon-right .input-label+input{
-			right:10px;
-			position:absolute;
-		}
 		.item-floating-label .input-label+input,.item-stacked-label .input-label+input{
 			padding-right:0px!important;
 			text-align:left;

@@ -25,23 +25,52 @@ angular.module('app').directive('inputTreelist', ['$compile', 'utils', function(
                 'bower_components/mobiscroll/js/mobiscroll.custom-3.0.0-beta6.min.js'
 			]).then(function() {
 				element = $(element[0]);
-
+				var treelistInstance;
 				var options = {
 					theme: 'android-holo-light',
 					lang: 'zh',
 					display:'bottom',
+					showLabel:true,
+					height:30,
+					circular:false,
+					filter:true,
+					layout:attr.layout,
+					labels:attr.labels?attr.labels.split(','):['　','　','　'],
 					placeholder:'请选择选项',
-					headerText:attr.headerText||'请选择',
-					buttons:['clear','cancel','set'],
+					headerText:attr.headerText||function(value){
+						var dataArray = value.split(' ');
+						var item1 = $('#'+element.attr('id')+' [data-val='+dataArray[0]+']').attr('data-text');
+						var item2 = $('#'+element.attr('id')+' [data-val='+dataArray[1]+']').attr('data-text');
+						var item3 = $('#'+element.attr('id')+' [data-val='+dataArray[2]+']').attr('data-text');
+						if(item1 && item2 && item3){
+							return item3;
+						}else{
+							return '　';
+						}
+					},
+					buttons:[{
+						text:'取消',
+						handler:'cancel',
+						icon:'close'
+					},{
+						text:'清空',
+						handler:'clear',
+						icon:'loop2'
+					},{
+						text:'确定',
+						handler:'set',
+						icon:'checkmark'
+					}],
 					onInit:function(event,inst){
+						treelistInstance = inst;
 						if(scope.ngModel){
-							[scope.ngModel.substr(0,2),scope.ngModel.substr(0,4),scope.ngModel];
-							var item1 = $('[data-val='+scope.ngModel.substr(0,2)+']').attr('data-text');
-							var item2 = $('[data-val='+scope.ngModel.substr(0,4)+']').attr('data-text');
-							var item3 = $('[data-val='+scope.ngModel+']').attr('data-text');
+							var item1 = $('#'+element.attr('id')+' [data-val='+scope.ngModel.substr(0,2)+']').attr('data-text');
+							var item2 = $('#'+element.attr('id')+' [data-val='+scope.ngModel.substr(0,4)+']').attr('data-text');
+							var item3 = $('#'+element.attr('id')+' [data-val='+scope.ngModel+']').attr('data-text');
 
 							$('#'+element.attr('id')+'_dummy').val(item1+item2+item3);
 						}
+						
 					},
 					onSet:function(event,inst){
 						var value = '';
@@ -53,6 +82,9 @@ angular.module('app').directive('inputTreelist', ['$compile', 'utils', function(
 						scope.ngModel = value;
 						$('#'+element.attr('id')+'_dummy').val(text);
 						scope.$apply();
+					},
+					onChange:function(event, inst){
+						console.log(event);
 					}
 				};
 
@@ -62,6 +94,16 @@ angular.module('app').directive('inputTreelist', ['$compile', 'utils', function(
 
 				setTimeout(function(){
 					element.mobiscroll().treelist(options);
+					scope.$watch('ngModel',function(value){
+						if(value){
+							treelistInstance.setVal([value.substr(0,2),value.substr(0,4),value],true,false,false);
+							var item1 = $('#'+element.attr('id')+' [data-val='+value.substr(0,2)+']').attr('data-text');
+							var item2 = $('#'+element.attr('id')+' [data-val='+value.substr(0,4)+']').attr('data-text');
+							var item3 = $('#'+element.attr('id')+' [data-val='+value+']').attr('data-text');
+
+							$('#'+element.attr('id')+'_dummy').val(item1+item2+item3);
+						}
+					});
 				});
 			});
 		}

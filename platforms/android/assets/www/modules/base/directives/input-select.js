@@ -27,7 +27,7 @@ angular.module('app').directive('inputSelect', ['$compile', 'utils', function($c
 						});
 					}
 				}
-
+				var selectInstance;
 				var options = {
 					theme: 'android-holo-light',
 					lang: 'zh',
@@ -36,8 +36,21 @@ angular.module('app').directive('inputSelect', ['$compile', 'utils', function($c
 					placeholder:'请选择选项',
 					circular:(attr.circular==true||attr.circular=='true')?true:false,
 					headerText:attr.headerText||'请选择',
-					buttons:['clear','cancel','set'],
+					buttons:[{
+						text:'取消',
+						handler:'cancel',
+						icon:'close'
+					},{
+						text:'清空',
+						handler:'clear',
+						icon:'loop2'
+					},{
+						text:'确定',
+						handler:'set',
+						icon:'checkmark'
+					}],
 					onInit:function(event,inst){
+						selectInstance = inst;
 						if(scope.ngModel){
 							inst.setVal(scope.ngModel);
 						}
@@ -66,6 +79,12 @@ angular.module('app').directive('inputSelect', ['$compile', 'utils', function($c
 				}
 
 				element.mobiscroll().select(options);
+
+				scope.$watch('ngModel',function(value){
+					if(value){
+						selectInstance.setVal(value,true,false,false);
+					}
+				});
 			});
 		}
 	};

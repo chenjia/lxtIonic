@@ -51,7 +51,7 @@ module.exports = function (grunt) {
             },
             compress: {
                 files: {
-                    'www/lxtIonic-1.0.0.min.css': [
+                    'src/app/lxtClient-1.0.0.min.css': [
                         cfg.src+"/bower_components/ionic/css/ionic.min.css",
                         cfg.src+"/bower_components/fontawesome/css/font-awesome.min.css",
                         cfg.src+"/styles/main.css"

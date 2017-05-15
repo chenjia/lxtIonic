@@ -1,5 +1,5 @@
 var Config = {
-    server:'http://localhost:8080/lxtServer',
+    server:'http://msuat.pkufi.com/bdfz_server',
     debug:true,
     key:'ed26d4cd99aa11e5b8a4c89cdc776729',
     random:(''+Math.random()).substr(2)
@@ -60,7 +60,7 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
     $ionicConfigProvider.spinner.icon('bubbles');
 
     $ionicNativeTransitionsProvider.setDefaultOptions({
-        duration: 400, // in milliseconds (ms), default 400,
+        duration: 300, // in milliseconds (ms), default 400,
         slowdownfactor: 4, // overlap views (higher number is more) or no overlap (1), default 4
         iosdelay: -1, // ms to wait for the iOS webview to update before animation kicks in, default -1
         androiddelay: -1, // same as above but for Android, default -1
@@ -72,13 +72,13 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
     });
 
     $ionicNativeTransitionsProvider.setDefaultTransition({
-        type: 'flip',
-        direction: 'left'
+        type: 'slide',
+        direction:'left'
     });
 
     $ionicNativeTransitionsProvider.setDefaultBackTransition({
-        type: 'flip',
-        direction: 'right'
+        type: 'slide',
+        direction:'right'
     });
 }]).run(['$rootScope','$ionicPlatform','$state','utils',function ($rootScope, $ionicPlatform,$state,utils) {
     utils.$ionicPlatform.ready(function(){

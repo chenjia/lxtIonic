@@ -8,14 +8,14 @@ angular.module('utils.interceptor',['utils.cache']).factory('httpInterceptor',['
 			return config;
 		},
 		response:function(response){
-			var status = response.status;
+			var status = response.resultStatus;
 			if(response.config.url.indexOf(Config.server)!=-1 && '.json'!=response.config.url.substr(response.config.url.length-5,5)){
 				if(Config.debug){
-					response.data = response.data.opt;
+					response.data = response.data.dataObj;
 				}else{
 					response.data = eval('('+app.utils.security.decrypt(response.data.opt)+')');
 				}
-
+				console.log(response);
 				switch(response.data.status){
 					case '401':
 						if(!isSessionTimeout){

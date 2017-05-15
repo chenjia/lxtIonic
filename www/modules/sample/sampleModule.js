@@ -152,5 +152,18 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
                 ]);
             }]
         }
+    }).state('customerList', {
+        url: "/customer/list",
+        controller:'customerController',
+        templateUrl:function(){
+            return 'modules/sample/views/customerList.html';
+        },
+        resolve: {
+            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load([
+                    'modules/sample/controllers/customerController.js'
+                ]);
+            }]
+        }
     });
 }]);

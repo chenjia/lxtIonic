@@ -27,10 +27,10 @@
 				</div>
 				<div class="item item-input" style="padding:6px 15px!important;" ng-class="{'radius-bottom':!vo.needCheck}">
 					<span class="input-label">验证码</span>
-					<input type="text" name="captcha" ng-model="vo.captcha" placeholder="输入验证码" style="padding-right:0;" required>
-					<img ng-click="vc.refreshCaptcha()" ng-src="data:image/png;base64,{{img}}" style="flex:1 220px;width:100px;height:30px;border:1px solid #ccc;border-radius:3px;margin-right:35px;">
+					<input type="text" name="validCode" ng-model="vo.validCode" placeholder="输入验证码" style="padding-right:0;" required>
+					<img ng-click="vc.refreshCaptcha()" ng-src="data:image/png;base64,{{img}}" style="flex:0.1 100px;width:100px;height:30px;border:1px solid #ccc;border-radius:3px;margin-right:35px;">
 				</div>
-				<div ng-style="{'display':form.captcha.$dirty&&!form.captcha.$valid?'block':'none'}" class="field-error-item">
+				<div ng-style="{'display':form.validCode.$dirty&&!form.validCode.$valid?'block':'none'}" class="field-error-item">
 					<div class="triangle"></div>
 					<span>验证码不能为空！</span>
 				</div>

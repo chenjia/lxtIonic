@@ -6,4 +6,13 @@ angular.module('app').filter('short',['$sce',function($sce){
 		}
 		return value;
 	};
+}]).filter('sexFilter',['$sce',function($sce){
+	return function(value){
+		if(value == 1 || value == '1'){
+			value = '男';
+		}else{
+			value = '女';
+		}
+		return value;
+	};
 }]);

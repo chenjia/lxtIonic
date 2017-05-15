@@ -1,0 +1,84 @@
+<ion-view view-title="客户管理">
+    <ion-nav-buttons side="left">
+        <button native-ui-sref="home" native-options="{type: 'slide', direction:'right'}" class="button button-positive icon ion-chevron-left"></button>
+    </ion-nav-buttons>
+    
+    <ion-content scroll="false" class="has-header" has-bouncing="false">
+        <div class="tab-buttons" style="z-index:9999;">
+            <div class="button-bar">
+                <a ng-click="vc.switchTab(0)" class="button" ng-style="{color:vo.index==0?'#32cd32':''}">准客户</a>
+                <a ng-click="vc.switchTab(1)" class="button" ng-style="{color:vo.index==1?'#32cd32':''}">老客户</a>
+                <a ng-click="vc.switchTab(2)" class="button" ng-style="{color:vo.index==2?'#32cd32':''}">网络客户</a>
+            </div>
+            <div class="line" ng-style="{left:vo.index*100/3+'%',width:100/3+'%'}"></div>
+        </div>
+        <ion-scroll delegate-handle="customerScroll" ng-style="{height:(screenHeight-100)+'px'}">
+            <ion-refresher on-refresh="vc.doRefresh()" pulling-text="下拉刷新" refreshing-text="刷新中" spinner></ion-refresher>
+            <ion-list ng-show="vo.index==0" show-delete="vo.showDelete" show-reorder="vo.showReorder" can-swipe="true">
+                <ion-item ng-repeat="item in vo.customerList" class="item-icon-right item-avatar item-remove-animate">
+                    <img src="images/common/head.jpg">
+                    <h2>{{item.NAME}}</h2>
+                    <p>性别：{{item.SEX|sexFilter}}　生日：{{item.BIRTHDAY|limitTo:10}}</p>
+                    <i ng-click="vc.showOptions($event)" class="icon fa fa-angle-right"></i>
+                    <ion-option-button class="button-balanced" ng-click="share(item)">
+                        <i class="ion-android-share-alt padding"></i>分享
+                    </ion-option-button>
+                    <ion-option-button class="button-royal" ng-click="edit(item)">
+                        <i class="ion-edit padding"></i>编辑
+                    </ion-option-button>
+                    <ion-delete-button class="ion-minus-circled" ng-click="vc.doDelete($index)">
+                    </ion-delete-button>
+                    <ion-reorder-button class="ion-navicon" on-reorder="vc.reorderItem(item, $fromIndex, $toIndex)">
+                    </ion-reorder-button>
+                </ion-item>
+            </ion-list>
+
+            <ion-list ng-show="vo.index==1" show-delete="vo.showDelete" show-reorder="vo.showReorder" can-swipe="true">
+                <ion-item ng-repeat="item in vo.oldCustomerList" class="item-icon-right item-avatar item-remove-animate">
+                    <img src="images/common/head.jpg">
+                    <h2>{{item.customerName}}</h2>
+                    <p>性别：{{item.sex|sexFilter}}　生日：{{item.birthDate|limitTo:10}}</p>
+                    <i ng-click="vc.showOptions($event)" class="icon fa fa-angle-right"></i>
+                    <ion-option-button class="button-balanced" ng-click="share(item)">
+                        <i class="ion-android-share-alt padding"></i>分享
+                    </ion-option-button>
+                    <ion-option-button class="button-royal" ng-click="edit(item)">
+                        <i class="ion-edit padding"></i>编辑
+                    </ion-option-button>
+                    <ion-delete-button class="ion-minus-circled" ng-click="vc.doDelete($index)">
+                    </ion-delete-button>
+                    <ion-reorder-button class="ion-navicon" on-reorder="vc.reorderItem(item, $fromIndex, $toIndex)">
+                    </ion-reorder-button>
+                </ion-item>
+            </ion-list>
+            <div ng-show="vo.loading" style="margin:10px;color:#32cd32;font-size:16px;z-index:9999;padding-bottom:10px;text-align:center;">
+                <ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner><br/>
+                加载中
+            </div>
+            <ion-infinite-scroll ng-show="false" on-infinite="vc.loadMore()"></ion-infinite-scroll>
+        </ion-scroll>
+    </ion-content>
+    <style type="text/css">
+        .tab-buttons{
+            position:relative;
+            border-bottom:1px solid #ddd;
+        }
+        .tab-buttons .button.activated{
+            border-color:#f8f8f8;
+            background:#f8f8f8;
+        }
+        .button-bar .button{
+            padding:0;
+        }
+        .tab-buttons .line{
+            display:inline-block;
+            position:absolute;
+            top:46px;
+            z-index:9;
+            height:3px;
+            line-height:3px;
+            border-bottom:3px solid #32cd32;
+            transition:left .2s ease-in-out;
+        }
+    </style>
+</ion-view>

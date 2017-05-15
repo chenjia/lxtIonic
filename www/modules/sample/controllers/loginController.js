@@ -26,11 +26,7 @@ angular.module('app').controller('loginController',['$rootScope','$scope','utils
             duration:5000,
             template:'<ion-spinner icon="bubbles" class="spinner-calm"></ion-spinner><br/>登录中'
         });
-        utils.http(Service.login,$scope.vo,{
-            headers:{
-                token:$scope.token
-            }
-        }).success(function(response){
+        utils.http(Service.login).success(function(response){
             console.log(response);
             if(response.status==500){
                 utils.$ionicPopup.alert({
@@ -103,8 +99,7 @@ angular.module('app').controller('loginController',['$rootScope','$scope','utils
 
         utils.http(Service.captcha).then(function(response){
             console.log(response);
-            $scope.img = response.data.data.img;
-            $scope.token = response.data.data.token;
+            $scope.img = response.data.b64Img;
         });
     })();
 }]);

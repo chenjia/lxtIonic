@@ -1,6 +1,20 @@
 angular.module('utils.service').run(['utils',function(utils){
 	$.extend(window.Service,{
 		slideBox:'/modules/sample/data/lbpicture.json',
-		address:'/modules/sample/data/address.json'
+		address:'/modules/sample/data/address.json',
+		queryCustomer:{
+			url:'/callServiceByMobile.do',
+			params:{
+				dataContainer:"{\"queryId\":\"queryCustomerListHd\",\"rowNum\":10,\"pageNo\":1,\"condition\":\"{\\\"agentCode\\\":\\\"1011030A30\\\"}\"}",
+				serviceId:5555
+			}
+		},
+		queryOldCustomer:{
+			url:'/callServiceByMobile/7006.do',
+			params:{
+				serviceId:7006,
+				"queryCustomer":{"indexOfPage":1,"numPerPage":10,"agentNum":"1011030A30","name":"","mobile":"","birthDateStart":"","birthDateEnd":"","customerType":"001"}
+			}
+		}
 	});
 }]);

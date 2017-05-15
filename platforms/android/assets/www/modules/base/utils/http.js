@@ -1,7 +1,7 @@
 angular.module('utils.http',['utils.security']).factory('http',['$http','security',function($http,security){
 	return function(service,params,config){
 		var url = service;
-
+		console.log(service);
 		if(typeof service == 'object'){
 			url = service.url;
 			if(!params){
@@ -28,13 +28,14 @@ angular.module('utils.http',['utils.security']).factory('http',['$http','securit
 		};
 		config = config?angular.extend({},defaultConfig,config):defaultConfig;
 		config.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+		console.log(params);
 		var paramStr = angular.toJson(params);
 		var promise;
 		if('.json'==url.substr(url.length-5,5)){
 			promise = $http.get(url,config);
 		}else{
 			console.log(config);
-			promise = $http.post(url,{opt:Config.debug?paramStr:security.encrypt(angular.toJson(paramStr))},config);
+			promise = $http.post(url,{devId:'',userId:'',serviceId:params.serviceId,opt:Config.debug?paramStr:security.encrypt(angular.toJson(paramStr))},config);
 		}
 		return promise;
 	};

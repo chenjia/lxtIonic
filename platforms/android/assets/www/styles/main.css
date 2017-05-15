@@ -35,7 +35,7 @@
 .list .item.item-accordion.ng-hide-remove {
 	display: block !important;
 }
-.icon-refreshing .spinner{
+.icon-refreshing .spinner,ion-infinite-scroll .spinner{
 	stroke:#32cd32;
     fill:#32cd32;
 }

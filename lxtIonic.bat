@@ -1,3 +1,3 @@
 
 cd D:\project\lxtIonic
-ionic serve
+grunt server

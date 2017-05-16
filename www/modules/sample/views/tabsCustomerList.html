@@ -1,0 +1,37 @@
+<ion-view view-title="客户管理">
+    <ion-nav-buttons side="left">
+        <button native-ui-sref="home" native-options="{type: 'slide', direction:'right'}" class="button button-positive icon ion-chevron-left"></button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <button native-ui-sref="home" native-options="{type: 'flip', direction:'left', duration:400}" class="button button-positive icon ion-android-home"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-scroll has-bouncing="false" delegate-handle="customerScroll" ng-style="{height:(screenHeight-92)+'px'}">
+            <ion-refresher on-refresh="vc.doRefresh()" pulling-text="下拉刷新" refreshing-text="刷新中" spinner></ion-refresher>
+            <ion-list show-delete="vo.showDelete" show-reorder="vo.showReorder" can-swipe="true">
+                <ion-item ng-repeat="item in vo.customerList" class="fade-in item-icon-right item-avatar item-remove-animate">
+                    <img src="images/common/head.jpg">
+                    <h2>{{item.NAME}}</h2>
+                    <p>性别：{{item.SEX|sexFilter}}　生日：{{item.BIRTHDAY|limitTo:10}}</p>
+                    <i ng-click="vc.showOptions($event)" class="icon fa fa-angle-right"></i>
+                    <ion-option-button class="button-balanced" ng-click="share(item)">
+                        <i class="ion-android-share-alt padding"></i>分享
+                    </ion-option-button>
+                    <ion-option-button class="button-royal" ng-click="edit(item)">
+                        <i class="ion-edit padding"></i>编辑
+                    </ion-option-button>
+                    <ion-delete-button class="ion-minus-circled" ng-click="vc.doDelete($index)">
+                    </ion-delete-button>
+                    <ion-reorder-button class="ion-navicon" on-reorder="vc.reorderItem(item, $fromIndex, $toIndex)">
+                    </ion-reorder-button>
+                </ion-item>
+            </ion-list>
+            <div ng-show="vo.hasMore" style="margin-top:10px;color:#32cd32;font-size:16px;z-index:9999;text-align:center;">
+                <ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner><br/>
+                <span>加载中</span>
+            </div>
+            <ion-infinite-scroll immediate-check="false" ng-show="false" on-infinite="vc.loadMore()"></ion-infinite-scroll>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

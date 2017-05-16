@@ -58,9 +58,10 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
     $ionicConfigProvider.form.checkbox('circle');
     $ionicConfigProvider.form.toggle('large');
     $ionicConfigProvider.spinner.icon('bubbles');
+    // $ionicConfigProvider.scrolling.jsScrolling(true);
 
     $ionicNativeTransitionsProvider.setDefaultOptions({
-        duration: 300, // in milliseconds (ms), default 400,
+        duration: 200, // in milliseconds (ms), default 400,
         slowdownfactor: 4, // overlap views (higher number is more) or no overlap (1), default 4
         iosdelay: -1, // ms to wait for the iOS webview to update before animation kicks in, default -1
         androiddelay: -1, // same as above but for Android, default -1
@@ -82,6 +83,10 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
     });
 }]).run(['$rootScope','$ionicPlatform','$state','utils',function ($rootScope, $ionicPlatform,$state,utils) {
     utils.$ionicPlatform.ready(function(){
+        if(window.StatusBar){
+            window.StatusBar.backgroundColorByHexString("#C0C0C0");
+        }
+
         if(screen.lockOrientation){
             screen.lockOrientation('portrait');//landscape
         }

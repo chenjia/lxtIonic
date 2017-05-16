@@ -1,6 +1,6 @@
 angular.module('app.route').config(['$stateProvider',function($stateProvider){
 	$stateProvider.state('home', {
-        url:"/home",
+        url:'/home',
         controller:'homeController',
         templateUrl:function(){
             return 'modules/sample/views/home.html';
@@ -14,7 +14,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
             }]
         }
     }).state('login', {
-        url:"/login",
+        url:'/login',
         controller:'loginController',
         templateUrl:function(){
             return 'modules/sample/views/login.html';
@@ -27,7 +27,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
             }]
         }
     }).state('list', {
-        url:"/list",
+        url:'/list',
         controller:'listController',
         templateUrl:function(){
             return 'modules/sample/views/list.html';
@@ -40,26 +40,26 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
             }]
         }
     }).state('contacts', {
-        url: "/contacts",
+        url:'/contacts',
         controller:'contactsController',
         templateUrl:function(){
             return 'modules/sample/views/contacts.html';
         },
-        resolve: {
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+        resolve:{
+            load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'modules/sample/controllers/contactsController.js'
                 ]);
             }]
         }
     }).state('chart', {
-        url: "/chart",
+        url:'/chart',
         controller:'chartController',
         templateUrl:function(){
             return 'modules/sample/views/chart.html';
         },
-        resolve: {
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+        resolve:{
+            load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'echarts',
                     'modules/sample/controllers/chartController.js'
@@ -67,13 +67,13 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
             }]
         }
     }).state('form', {
-        url: "/form",
+        url:'/form',
         controller:'formController',
         templateUrl:function(){
             return 'modules/sample/views/form.html';
         },
-        resolve: {
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+        resolve:{
+            load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'rating',
                     'modules/base/directives/input-datetime.js',
@@ -87,52 +87,52 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
             }]
         }
     }).state('tab', {
-        url: "/tab",
+        url:'/tab',
         controller:'tabController',
         templateUrl:function(){
             return 'modules/sample/views/tab.html';
         },
-        resolve: {
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+        resolve:{
+            load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'modules/sample/controllers/tabController.js'
                 ]);
             }]
         }
     }).state('loading', {
-        url: "/loading",
+        url:'/loading',
         controller:'loadingController',
         templateUrl:function(){
             return 'modules/sample/views/loading.html';
         },
-        resolve: {
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+        resolve:{
+            load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'modules/sample/controllers/loadingController.js'
                 ]);
             }]
         }
     }).state('live', {
-        url: "/live",
+        url:'/live',
         controller:'liveController',
         templateUrl:function(){
             return 'modules/sample/views/live.html';
         },
-        resolve: {
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+        resolve:{
+            load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'modules/sample/controllers/liveController.js'
                 ]);
             }]
         }
     }).state('calendar', {
-        url: "/calendar",
+        url:'/calendar',
         controller:'calendarController',
         templateUrl:function(){
             return 'modules/sample/views/calendar.html';
         },
-        resolve: {
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+        resolve:{
+            load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'mobiscroll',
                     'modules/sample/controllers/calendarController.js'
@@ -140,30 +140,73 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
             }]
         }
     }).state('map', {
-        url: "/map",
+        url:'/map',
         controller:'mapController',
         templateUrl:function(){
             return 'modules/sample/views/map.html';
         },
-        resolve: {
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+        resolve:{
+            load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'modules/sample/controllers/mapController.js'
                 ]);
             }]
         }
     }).state('customerList', {
-        url: "/customer/list",
+        url:'/customer/list',
+        cache:false,
+        abstract:true,
         controller:'customerController',
         templateUrl:function(){
             return 'modules/sample/views/customerList.html';
         },
-        resolve: {
-            load: ['$ocLazyLoad', function ($ocLazyLoad) {
+        resolve:{
+            load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'modules/sample/controllers/customerController.js'
                 ]);
             }]
+        }
+    }).state('customerList.tabs', {
+        url:'/tabs',
+        cache:false,
+        views:{
+            'customer':{
+                controllerProvider:[function(){
+                    return 'preCustomerController';
+                }],
+                templateUrl:function(){
+                    return 'modules/sample/views/tabsCustomerList.html';
+                },
+                resolve:{
+                    load:['$ocLazyLoad',function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'modules/sample/controllers/preCustomerController.js'
+                        ]);
+                    }]
+                }
+            }
+        }
+    }).state('customerList.tab', {
+        url:'/:type',
+        cache:false,
+        nativeTransitions:null,
+        views:{
+            'customer':{
+                controllerProvider:['$stateParams',function($stateParams){
+                    return $stateParams.type+'CustomerController';
+                }],
+                templateUrl:function(params){
+                    return 'modules/sample/views/'+params.type+'CustomerList.html';
+                },
+                resolve:{
+                    load:['$ocLazyLoad','$stateParams', function ($ocLazyLoad,$stateParams) {
+                        return $ocLazyLoad.load([
+                            'modules/sample/controllers/'+$stateParams.type+'CustomerController.js'
+                        ]);
+                    }]
+                }
+            }
         }
     });
 }]);

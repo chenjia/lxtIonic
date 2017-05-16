@@ -14,6 +14,7 @@ angular.module('utils',[
 	'$ocLazyLoad',
 	'$filter',
 	'$state',
+	'$stateParams',
 	'$timeout',
 	'$interval',
 	'$location',
@@ -32,10 +33,43 @@ angular.module('utils',[
 	'$ionicViewSwitcher',
 	'$ionicSlideBoxDelegate',
 	'$ionicSideMenuDelegate',
+	'$ionicNativeTransitions',
 	
 	'$cordovaFileTransfer',
 	'$cordovaNetwork',
-	'$cordovaGeolocation',function(format,cache,http,security,$ocLazyLoad,$filter,$state,$timeout,$interval,$location,$compile,$templateRequest,$ionicPlatform,$ionicHistory,$ionicPosition,$ionicScrollDelegate,$ionicNavBarDelegate,$ionicModal,$ionicLoading,$ionicPopup,$ionicPopover,$ionicViewSwitcher,$ionicSlideBoxDelegate,$ionicSideMenuDelegate,$cordovaFileTransfer,$cordovaNetwork,$cordovaGeolocation){
+	'$cordovaGeolocation',function(
+		format,
+		cache,
+		http,
+		security,
+
+		$ocLazyLoad,
+		$filter,
+		$state,
+		$stateParams,
+		$timeout,
+		$interval,
+		$location,
+		$compile,
+		$templateRequest,
+
+		$ionicPlatform,
+		$ionicHistory,
+		$ionicPosition,
+		$ionicScrollDelegate,
+		$ionicNavBarDelegate,
+		$ionicModal,
+		$ionicLoading,
+		$ionicPopup,
+		$ionicPopover,
+		$ionicViewSwitcher,
+		$ionicSlideBoxDelegate,
+		$ionicSideMenuDelegate,
+		$ionicNativeTransitions,
+
+		$cordovaFileTransfer,
+		$cordovaNetwork,
+		$cordovaGeolocation){
 	return {
 		format:format,
 		cache:cache,
@@ -45,6 +79,7 @@ angular.module('utils',[
 		$ocLazyLoad:$ocLazyLoad,
 		$filter:$filter,
 		$state:$state,
+		$stateParams:$stateParams,
 		$timeout:$timeout,
 		$interval:$interval,
 		$location:$location,
@@ -63,6 +98,7 @@ angular.module('utils',[
 		$ionicViewSwitcher:$ionicViewSwitcher,
 		$ionicSlideBoxDelegate:$ionicSlideBoxDelegate,
 		$ionicSideMenuDelegate:$ionicSideMenuDelegate,
+		$ionicNativeTransitions:$ionicNativeTransitions,
 
 		$cordovaFileTransfer:$cordovaFileTransfer,
 		$cordovaNetwork:$cordovaNetwork,

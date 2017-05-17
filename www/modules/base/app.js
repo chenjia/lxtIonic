@@ -288,10 +288,10 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
     $rootScope.server = Config.server;
 
     utils.$timeout(function(){
-        $rootScope.screenWidth = window.screen.availWidth;
-        $rootScope.screenHeight = window.screen.availHeight;
+        $rootScope.screenWidth = document.documentElement.clientWidth;
+        $rootScope.screenHeight = document.documentElement.clientHeight;
         utils.$ionicSideMenuDelegate.$getByHandle('menuHandle').canDragContent(false);
-    });
+    },1000);
     
     $rootScope.go = function(state,params){
         if(state==-1){
@@ -312,7 +312,17 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
         'home','login','demo'
     ];
 
+    $rootScope.$on('$stateChangeStart',function(event, toState,toParams, fromState,fromParams){
+        if(!$rootScope.state && toState.name == 'customerList.tab'){
+            event.preventDefault();
+            $rootScope.go('customerList.tabs',{type:'pre'});
+        }
+    });
+
     $rootScope.$on('$stateChangeSuccess',function(event, toState,toParams, fromState,fromParams) {
+        
+        
+
         $rootScope.state = toState;
         if(utils.$ionicSideMenuDelegate.isOpenLeft()){
             utils.$ionicSideMenuDelegate.toggleLeft(false);

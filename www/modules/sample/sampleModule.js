@@ -29,6 +29,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
     }).state('list', {
         url:'/list',
         controller:'listController',
+        cache:false,
         templateUrl:function(){
             return 'modules/sample/views/list.html';
         },
@@ -168,27 +169,27 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
             }]
         }
     }).state('customerList.tabs', {
-        url:'/tabs',
+        url:'/tabs/:type',
         cache:false,
         views:{
             'customer':{
-                controllerProvider:[function(){
-                    return 'preCustomerController';
+                controllerProvider:['$stateParams',function($stateParams){
+                    return $stateParams.type+'CustomerController';
                 }],
                 templateUrl:function(){
                     return 'modules/sample/views/tabsCustomerList.html';
                 },
                 resolve:{
-                    load:['$ocLazyLoad',function ($ocLazyLoad) {
+                    load:['$ocLazyLoad','$stateParams',function ($ocLazyLoad,$stateParams) {
                         return $ocLazyLoad.load([
-                            'modules/sample/controllers/preCustomerController.js'
+                            'modules/sample/controllers/'+$stateParams.type+'CustomerController.js'
                         ]);
                     }]
                 }
             }
         }
     }).state('customerList.tab', {
-        url:'/:type',
+        url:'/tab/:type',
         cache:false,
         nativeTransitions:null,
         views:{

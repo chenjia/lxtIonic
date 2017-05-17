@@ -1,22 +1,34 @@
 angular.module('app').controller('listController',['$rootScope','$scope','utils',function($rootScope,$scope,utils){
     $scope.vo = {
-        items:[],
-        loading:false
+        index:0,
+        items:[[],[],[]],
+        loading:false,
+        hasMore:true
     };
     
     $scope.vc = {
+        switchType:function(index){
+            if($scope.vo.index != index){
+                $scope.vo.items[index] = [];
+                $scope.vo.index = index;
+                $scope.vc.loadMore();
+            }
+        },
         doRefresh:function(){
             utils.$timeout(function(){
                 $scope.$broadcast('scroll.refreshComplete');
-            },3000);
+            },Math.random()*5000);
         },
         loadMore:function(){
             $scope.vo.loading = true;
             utils.$timeout(function(){
-                $scope.vo.items.push({id:$scope.vo.items.length+1,name:'item '+($scope.vo.items.length+1)});
+                $scope.vo.hasMore = true;
+                for(var i=0;i<10;i++){
+                    $scope.vo.items[$scope.vo.index].push({id:$scope.vo.items[$scope.vo.index].length+1,name:'item '+($scope.vo.items[$scope.vo.index].length+1)});
+                }
                 $scope.$broadcast('scroll.infiniteScrollComplete');
                 $scope.vo.loading = false;
-            },1000);
+            },Math.random()*5000);
         },
         showMenu:function($event){
             utils.$ionicPopover.fromTemplateUrl('menu.html', {
@@ -38,7 +50,7 @@ angular.module('app').controller('listController',['$rootScope','$scope','utils'
             $scope.popover.hide();
         },
         doAdd:function(){
-            $scope.vo.items.push({id:$scope.vo.items.length+1,name:$scope.vo.item});
+            $scope.vo.items[$scope.vo.index].push({id:$scope.vo.items[$scope.vo.index].length+1,name:$scope.vo.item});
             $scope.modal.hide();
         },
         delete:function(){
@@ -47,7 +59,7 @@ angular.module('app').controller('listController',['$rootScope','$scope','utils'
             $scope.popover.hide();
         },
         doDelete:function($index){
-            $scope.vo.items.splice($index,1);
+            $scope.vo.items[$scope.vo.index].splice($index,1);
         },
         update:function(){
             utils.$ionicModal.fromTemplateUrl('details.html',{
@@ -56,7 +68,7 @@ angular.module('app').controller('listController',['$rootScope','$scope','utils'
             }).then(function(modal){
                 modal.show();
                 $scope.modal = modal;
-                $scope.vo.item = $scope.vo.items[0].name;
+                $scope.vo.item = $scope.vo.items[$scope.vo.index][0].name;
                 $scope.vo.title='新增';
             });
             $scope.popover.hide();
@@ -67,8 +79,8 @@ angular.module('app').controller('listController',['$rootScope','$scope','utils'
             $scope.popover.hide();
         },
         reorderItem:function(item,fromIndex,toIndex){
-            $scope.vo.items.splice(fromIndex, 1);
-            $scope.vo.items.splice(toIndex, 0, item);
+            $scope.vo.items[$scope.vo.index].splice(fromIndex, 1);
+            $scope.vo.items[$scope.vo.index].splice(toIndex, 0, item);
         },
         search:function(){
             alert('search');
@@ -84,10 +96,6 @@ angular.module('app').controller('listController',['$rootScope','$scope','utils'
     };
 
     $scope.ready = function(){
-        utils.$timeout(function(){
-            for(var i=0;i<20;i++){
-                $scope.vo.items.push({id:$scope.vo.items.length+1,name:'item '+($scope.vo.items.length+1)});
-            }
-        },1000);
+        $scope.vc.loadMore();
     }();
 }]);

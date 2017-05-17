@@ -19,7 +19,7 @@ angular.module('app').controller('customerController',['$rootScope','$scope','ut
             utils.$ionicHistory.nextViewOptions({disableAnimate:true});
             utils.$timeout(function(){
                 utils.$state.go('customerList.tab',{type:type});
-            },200);
+            },250);
         }
     };
 

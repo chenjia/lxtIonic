@@ -56,6 +56,10 @@
         },
         "com.telerik.plugins.nativepagetransitions": {
             "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-plugin-wechat": {
+            "WECHATAPPID": "wxbb15052c86ce3476",
+            "PACKAGE_NAME": "com.pkufi.msales.uat"
         }
     },
     "dependent_plugins": {

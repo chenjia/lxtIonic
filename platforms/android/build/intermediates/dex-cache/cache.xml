@@ -21,21 +21,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-v4-25.1.1_f1ee5278d21993c0242fd83fe296484be120d438.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
         <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-media-compat-25.1.1_9f865df0685a948f34c820999a5930b40969ae34.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\project\lxtIonic\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-v4-25.1.1_f1ee5278d21993c0242fd83fe296484be120d438.jar" />
     </item>
     <item
         is-multidex="false"
@@ -99,6 +99,15 @@
         revision="25.0.2"
         sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
         <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\com.android.support-support-core-utils-25.1.1_7d938d8beaaddaea1a6c1645bda3c65cbdb16a80.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\project\lxtIonic\platforms\android\libs\libammsdk.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="11b09244aedaa51bfd09269637be7c32c60da314">
+        <dex dex="D:\project\lxtIonic\platforms\android\build\intermediates\pre-dexed\armv7\debug\libammsdk_a8e30899123cd077d4494ebcf198aad5b2c1b34f.jar" />
     </item>
     <item
         is-multidex="false"

@@ -41,7 +41,18 @@ angular.module('app').controller('contactsController',['$rootScope','$scope','ut
                     }
                 }
             };
-            $scope.vo.contacts = response.data.contacts;
+            $scope.vo.contacts = {
+                "A":response.data.contacts.A,
+                "B":response.data.contacts.B,
+                "C":response.data.contacts.C,
+                "D":response.data.contacts.D,
+                "E":response.data.contacts.E,
+                "F":response.data.contacts.F,
+                "G":response.data.contacts.G
+            };
+            utils.$timeout(function(){
+                $scope.vo.contacts = response.data.contacts;
+            },1000);
             $scope.vo.hotContacts = response.data.hot;
         },
         selectAlias:function(event, index) {

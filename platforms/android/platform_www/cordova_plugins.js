@@ -282,6 +282,14 @@ module.exports = [
         "clobbers": [
             "window.plugins.nativepagetransitions"
         ]
+    },
+    {
+        "id": "cordova-plugin-wechat.Wechat",
+        "file": "plugins/cordova-plugin-wechat/www/wechat.js",
+        "pluginId": "cordova-plugin-wechat",
+        "clobbers": [
+            "Wechat"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -302,7 +310,8 @@ module.exports.metadata =
     "cordova-plugin-network-information": "1.3.3",
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-screen-orientation": "2.0.1",
-    "com.telerik.plugins.nativepagetransitions": "0.6.5"
+    "com.telerik.plugins.nativepagetransitions": "0.6.5",
+    "cordova-plugin-wechat": "1.4.0"
 };
 // BOTTOM OF METADATA
 });

@@ -83,6 +83,24 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
     });
 }]).run(['$rootScope','$ionicPlatform','$state','utils',function ($rootScope, $ionicPlatform,$state,utils) {
     utils.$ionicPlatform.ready(function(){
+        // Wechat.share({
+        //     message: {
+        //         title:'pdf',
+        //         description:'pdf文件',
+        //         mediaTagName: "TEST-TAG-001",
+        //         thumb:'www/images/head.jpg',
+        //         media: {
+        //             type: Wechat.Type.FILE,
+        //             file: 'www/ES6-in-depth.pdf'
+        //         }
+        //     },
+        //     scene: Wechat.Scene.SESSION
+        // }, function (result) {
+        //     console.log(result);
+        // }, function (reason) {
+        //     console.log(reason);
+        // });
+        
         if(window.StatusBar){
             window.StatusBar.backgroundColorByHexString("#C0C0C0");
         }
@@ -171,6 +189,7 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
         // window.plugins.jPushPlugin.setAlias('chenjia');
         // initiateUI();
         if(window.chcp){
+            return;
             chcp.isUpdateAvailableForInstallation(function(error, data){
                 console.log(error);
                 console.log(data);
@@ -287,10 +306,14 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
 
     $rootScope.server = Config.server;
 
-    utils.$timeout(function(){
+
+    var timer = utils.$interval(function(){
         $rootScope.screenWidth = document.documentElement.clientWidth;
         $rootScope.screenHeight = document.documentElement.clientHeight;
         utils.$ionicSideMenuDelegate.$getByHandle('menuHandle').canDragContent(false);
+        if($rootScope.screenHeight != 0){
+            utils.$interval.cancel(timer);
+        }
     },1000);
     
     $rootScope.go = function(state,params){

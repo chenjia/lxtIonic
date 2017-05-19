@@ -1,6 +1,6 @@
 angular.module('app').controller('listController',['$rootScope','$scope','utils',function($rootScope,$scope,utils){
     $scope.vo = {
-        index:0,
+        index:utils.$stateParams.index || 0,
         items:[[],[],[]],
         loading:false,
         hasMore:true

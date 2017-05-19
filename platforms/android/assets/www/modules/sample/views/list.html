@@ -1,9 +1,9 @@
 <ion-view view-title="动态列表">
     <ion-nav-buttons side="left">
-        <button ui-sref="home" class="button button-positive icon ion-chevron-left"></button>
+        <button native-ui-sref="home" native-options="{type: 'slide', direction:'right'}" class="button button-positive icon ion-chevron-left"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
-        <button ng-click="vc.showMenu($event)" class="button button-positive icon fa fa-ellipsis-h"></button>
+        <button native-ui-sref="home" native-options="{type: 'flip', direction:'left', duration:400}" class="button button-positive icon ion-android-home"></button>
     </ion-nav-buttons>
     
 	<ion-content scroll="false" overflow-scroll="false" class="has-header" has-bouncing="false">
@@ -166,9 +166,9 @@
         .fade-in.ng-enter-active {
             opacity:1;
         }
-        .fade-in.ng-enter-stagger  {
+        /*.fade-in.ng-enter-stagger  {
             animation-delay: 0.1s;
             animation-duration: 0s;
-        }
+        }*/
     </style>
 </ion-view>

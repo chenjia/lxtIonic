@@ -87,6 +87,14 @@
                         {
                             "xml": "<feature name=\"NativePageTransitions\"><param name=\"android-package\" value=\"com.telerik.plugins.nativepagetransitions.NativePageTransitions\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Wechat\"><param name=\"android-package\" value=\"xu.li.cordova.wechat.Wechat\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"WECHATAPPID\" value=\"wxbb15052c86ce3476\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -124,15 +132,15 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-                            "count": 2
+                            "count": 3
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 2
+                            "count": 3
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
@@ -144,6 +152,24 @@
                         },
                         {
                             "xml": "<uses-feature android:name=\"android.hardware.location.gps\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:exported=\"true\" android:label=\"@string/launcher_name\" android:name=\".wxapi.WXEntryActivity\"><intent-filter><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><data android:scheme=\"wxbb15052c86ce3476\" /></intent-filter></activity>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:exported=\"true\" android:label=\"@string/launcher_name\" android:launchMode=\"singleTop\" android:name=\".wxapi.WXPayEntryActivity\"><intent-filter><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><data android:scheme=\"wxbb15052c86ce3476\" /></intent-filter></activity>",
                             "count": 1
                         }
                     ]
@@ -204,6 +230,10 @@
         },
         "com.telerik.plugins.nativepagetransitions": {
             "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
+        },
+        "cordova-plugin-wechat": {
+            "WECHATAPPID": "wxbb15052c86ce3476",
+            "PACKAGE_NAME": "com.pkufi.msales.uat"
         }
     },
     "dependent_plugins": {},
@@ -490,6 +520,14 @@
             "clobbers": [
                 "window.plugins.nativepagetransitions"
             ]
+        },
+        {
+            "id": "cordova-plugin-wechat.Wechat",
+            "file": "plugins/cordova-plugin-wechat/www/wechat.js",
+            "pluginId": "cordova-plugin-wechat",
+            "clobbers": [
+                "Wechat"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -508,6 +546,7 @@
         "cordova-plugin-network-information": "1.3.3",
         "es6-promise-plugin": "4.1.0",
         "cordova-plugin-screen-orientation": "2.0.1",
-        "com.telerik.plugins.nativepagetransitions": "0.6.5"
+        "com.telerik.plugins.nativepagetransitions": "0.6.5",
+        "cordova-plugin-wechat": "1.4.0"
     }
 }

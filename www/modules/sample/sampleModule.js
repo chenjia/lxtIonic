@@ -15,6 +15,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         }
     }).state('login', {
         url:'/login',
+        cache:false,
         controller:'loginController',
         templateUrl:function(){
             return 'modules/sample/views/login.html';
@@ -27,9 +28,9 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
             }]
         }
     }).state('list', {
-        url:'/list',
-        controller:'listController',
+        url:'/list/:index',
         cache:false,
+        controller:'listController',
         templateUrl:function(){
             return 'modules/sample/views/list.html';
         },
@@ -42,6 +43,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         }
     }).state('contacts', {
         url:'/contacts',
+        cache:false,
         controller:'contactsController',
         templateUrl:function(){
             return 'modules/sample/views/contacts.html';
@@ -55,6 +57,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         }
     }).state('chart', {
         url:'/chart',
+        cache:false,
         controller:'chartController',
         templateUrl:function(){
             return 'modules/sample/views/chart.html';
@@ -69,6 +72,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         }
     }).state('form', {
         url:'/form',
+        cache:false,
         controller:'formController',
         templateUrl:function(){
             return 'modules/sample/views/form.html';
@@ -89,6 +93,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         }
     }).state('tab', {
         url:'/tab',
+        cache:false,
         controller:'tabController',
         templateUrl:function(){
             return 'modules/sample/views/tab.html';
@@ -102,6 +107,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         }
     }).state('loading', {
         url:'/loading',
+        cache:false,
         controller:'loadingController',
         templateUrl:function(){
             return 'modules/sample/views/loading.html';
@@ -115,6 +121,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         }
     }).state('live', {
         url:'/live',
+        cache:false,
         controller:'liveController',
         templateUrl:function(){
             return 'modules/sample/views/live.html';
@@ -128,6 +135,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         }
     }).state('calendar', {
         url:'/calendar',
+        cache:false,
         controller:'calendarController',
         templateUrl:function(){
             return 'modules/sample/views/calendar.html';
@@ -142,6 +150,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         }
     }).state('map', {
         url:'/map',
+        cache:false,
         controller:'mapController',
         templateUrl:function(){
             return 'modules/sample/views/map.html';

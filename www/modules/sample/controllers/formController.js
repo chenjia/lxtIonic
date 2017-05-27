@@ -118,7 +118,8 @@ angular.module('app').controller('formController',['$rootScope','$scope','utils'
             $scope.vo.toastText = [{text:'toast text'+Math.random()}];
         },
         submit:function(form){
-            console.log(form);
+            console.log($scope.vo.ta);
+            return;
             var validator = {
                 '字段1':{
                     required:'不能为空！',

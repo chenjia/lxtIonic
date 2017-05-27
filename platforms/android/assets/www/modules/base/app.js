@@ -83,32 +83,24 @@ app.config(['$ionicConfigProvider','$ionicNativeTransitionsProvider',function($i
     });
 }]).run(['$rootScope','$ionicPlatform','$state','utils',function ($rootScope, $ionicPlatform,$state,utils) {
     utils.$ionicPlatform.ready(function(){
-        setTimeout(function(){
-            Wechat.share({
-                message: {
-                    title:'pdf',
-                    description:'pdf文件',
-                    mediaTagName: "TEST-TAG-001",
-                    messageExt: "这是第三方带的测试字段",
-                    messageAction: "<action>dotalist</action>",
-                    thumb:'www/images/head.jpg',
-                    media: {
-                        type: Wechat.Type.FILE,
-                        file: 'www/ES6-in-depth.pdf'
-                    }
-                },
-                scene: Wechat.Scene.SESSION
-            }, function (result) {
-                console.log(result);
-            }, function (reason) {
-                console.log(reason);
-            });
-
-        },5000);
+        // Wechat.share({
+        //     message: {
+        //         title:'pdf',
+        //         description:'pdf文件',
+        //         mediaTagName: "TEST-TAG-001",
+        //         thumb:'www/images/head.jpg',
+        //         media: {
+        //             type: Wechat.Type.FILE,
+        //             file: 'www/ES6-in-depth.pdf'
+        //         }
+        //     },
+        //     scene: Wechat.Scene.SESSION
+        // }, function (result) {
+        //     console.log(result);
+        // }, function (reason) {
+        //     console.log(reason);
+        // });
         
-
-
-
         if(window.StatusBar){
             window.StatusBar.backgroundColorByHexString("#C0C0C0");
         }

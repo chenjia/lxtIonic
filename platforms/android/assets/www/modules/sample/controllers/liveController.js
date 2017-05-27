@@ -1,6 +1,6 @@
 angular.module('app').controller('liveController',['$rootScope','$scope','utils',function($rootScope,$scope,utils){
     $scope.vo = {
-        ip:'http://172.16.117.5:5080/live/test.m3u8'
+        ip:'http://172.21.145.1:5080/live/test.m3u8'
     };
 
     $scope.vc = {

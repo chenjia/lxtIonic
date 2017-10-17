@@ -6,4 +6,8 @@ lxtIonic 是采用ionic开发的Hybird app，里面集成了很多demo可以供�
 
 下载完成后，把node_modules.zip解压到当前目录，然后在cmd运行grunt server即可启动服务，服务启动完成后会自动打开浏览器进行预览。
 
-最近迷上了vue，采用vue重写了demo：https://chenjia.github.io/vue-app/demo/index.html
+最近迷上了vue，采用vue重写了
+
+github：https://github.com/chenjia/vue-app
+
+demo：https://chenjia.github.io/vue-app/demo/index.html

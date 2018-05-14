@@ -60,6 +60,9 @@
         "cordova-plugin-wechat": {
             "WECHATAPPID": "wxbb15052c86ce3476",
             "PACKAGE_NAME": "com.pkufi.msales.uat"
+        },
+        "iclue-backgroundvideo": {
+            "PACKAGE_NAME": "com.ionicframework.lxtionic679478"
         }
     },
     "dependent_plugins": {

@@ -152,5 +152,13 @@
         "variables": {
             "WECHATAPPID": "wxbb15052c86ce3476"
         }
+    },
+    "iclue-backgroundvideo": {
+        "source": {
+            "type": "registry",
+            "id": "https://github.com/jamesla/backgroundvideo.git"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

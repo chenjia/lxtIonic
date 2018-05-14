@@ -4,11 +4,11 @@
     </ion-nav-buttons>
     
     <toast ng-model="toast" position="bottom"></toast>
-    <ion-content class="has-header" overflow-scroll="false" on-scroll="vc.onHomeScroll($event)" delegate-handle="homeScroll">
+    <ion-content class="has-header" overflow-scroll="false" on-scroll="vc.onHomeScroll(event)" delegate-handle="homeScroll">
         <!-- 轮播 -->
-        <ion-slide-box does-continue="true" auto-play="true" style="width:100%;margin-bottom:-5px;">
+        <ion-slide-box does-continue="true" auto-play="true" style="text-align:center;width:100%;margin-bottom:-5px;">
             <ion-slide ng-repeat="item in vo.slides track by $index">
-                <img style="width:100%;" ng-src="{{item.lbpicUrl}}">
+                <i ng-class="item.icon" style="line-height:200px;color:#26a2ff;font-size:100px;"></i>
             </ion-slide>
         </ion-slide-box>
         
@@ -90,24 +90,9 @@
         
         <div class="list">
             <div class="item item-divider positive">
-                <i class="ion-star"></i> 推荐产品
+                <i class="ion-star"></i> 待办事项
             </div>
-            <div class="item padding">
-                <ion-slide-box show-pager="false">
-                    <ion-slide ng-repeat="item in vo.slides">
-                        <div style="display:flex;justify-content:space-between;">
-                            <div style="text-align:center;">
-                                <img style="width:90%" ng-src="{{item.lbpicUrl}}">
-                                <p>产品{{$index+1}}</p>
-                            </div>
-                            <div style="text-align:center;">
-                                <img style="width:90%" ng-src="{{item.lbpicUrl}}">
-                                <p>产品{{$index+1}}</p>
-                            </div>
-                        </div>
-                    </ion-slide>
-                </ion-slide-box>
-            </div>
+            <timeline items="vo.timelines"></timeline>
         </div>
     </ion-content>
     
@@ -151,6 +136,84 @@
         .icon-table img{
             width:32px;
             height:32px;
+        }
+
+        .timeline-item{
+            width:100%;
+            margin-left:-10px;
+            display:flex;
+            box-sizing: content-box;
+        }
+        .timeline-item *{
+            box-sizing: content-box;
+        }
+        
+        .line-item{
+            flex:0 0 80px;
+        }
+        .line{
+            position:relative;
+            margin:0 auto;
+            padding:0;
+            width:0px;
+            height:100%;
+            border-width:1px;
+        }
+        .line.history{
+            border-style:solid!important;
+        }
+        .line-start{
+            position:absolute;
+            left:-6px;
+            top:-2px;
+            width:6px;
+            height:6px;
+            border-radius:50%;
+            background:#fff;
+            border:3px solid #26a2ff;
+        }
+        .line-icon{
+            position:relative;
+            top:22px;
+            left:-12px;
+            text-align:center;
+            line-height:24px;
+            width:24px;
+            height:24px;
+            border-radius:50%;
+            box-shadow: 2px 2px 5px #888888;
+            color:#fff;
+        }
+        .content-item{
+            flex:1 0 100px;
+            border-radius:0 4px 4px 0;
+            margin-top:22px;
+            position:relative;
+        }
+        .content-arrow{
+            position:absolute;
+            top:5px;
+            left:-12px;
+            width:0;
+            height:0;
+            border-top:8px solid #fff;
+            border-bottom:8px solid #fff;
+        }
+        .content-title{
+            font-size:16px;
+            height:20px;
+            line-height:20px;
+            padding:4px 10px;
+        }
+        .content-details{
+            padding:10px;
+            font-size:14px;
+        }
+        .content-time{
+            padding:5px;
+            font-size:12px;
+            color:#888;
+            text-align:right;
         }
     </style>
 </ion-view>

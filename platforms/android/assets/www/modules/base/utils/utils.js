@@ -35,6 +35,7 @@ angular.module('utils',[
 	'$ionicSideMenuDelegate',
 	'$ionicNativeTransitions',
 	
+	'$cordovaFile',
 	'$cordovaFileTransfer',
 	'$cordovaNetwork',
 	'$cordovaGeolocation',function(
@@ -67,6 +68,7 @@ angular.module('utils',[
 		$ionicSideMenuDelegate,
 		$ionicNativeTransitions,
 
+		$cordovaFile,
 		$cordovaFileTransfer,
 		$cordovaNetwork,
 		$cordovaGeolocation){
@@ -100,6 +102,7 @@ angular.module('utils',[
 		$ionicSideMenuDelegate:$ionicSideMenuDelegate,
 		$ionicNativeTransitions:$ionicNativeTransitions,
 
+		$cordovaFile:$cordovaFile,
 		$cordovaFileTransfer:$cordovaFileTransfer,
 		$cordovaNetwork:$cordovaNetwork,
 		$cordovaGeolocation:$cordovaGeolocation

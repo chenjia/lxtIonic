@@ -290,6 +290,14 @@ module.exports = [
         "clobbers": [
             "Wechat"
         ]
+    },
+    {
+        "id": "iclue-backgroundvideo.backgroundvideo",
+        "file": "plugins/iclue-backgroundvideo/www/backgroundvideo.js",
+        "pluginId": "iclue-backgroundvideo",
+        "clobbers": [
+            "cordova.plugins.backgroundvideo"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -311,7 +319,8 @@ module.exports.metadata =
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-screen-orientation": "2.0.1",
     "com.telerik.plugins.nativepagetransitions": "0.6.5",
-    "cordova-plugin-wechat": "1.4.0"
+    "cordova-plugin-wechat": "1.4.0",
+    "iclue-backgroundvideo": "0.0.11"
 };
 // BOTTOM OF METADATA
 });

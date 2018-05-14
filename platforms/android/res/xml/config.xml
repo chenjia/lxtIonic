@@ -47,6 +47,9 @@
     <feature name="Wechat">
         <param name="android-package" value="xu.li.cordova.wechat.Wechat" />
     </feature>
+    <feature name="backgroundvideo">
+        <param name="android-package" value="io.iclue.backgroundvideo.BackgroundVideo" />
+    </feature>
     <name>lxtIonic</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>

@@ -4,7 +4,8 @@ angular.module('app').directive('inputSelect', ['$compile', 'utils', function($c
 		require: 'ngModel',
 		scope: {
 			selectData:'=',
-			ngModel: '='
+			ngModel: '=',
+			change:'&'
 		},
 		link: function(scope, element, attr, ctrl) {
 			utils.$ocLazyLoad.load([
@@ -62,6 +63,8 @@ angular.module('app').directive('inputSelect', ['$compile', 'utils', function($c
 					},
 					onSet: function(value, inst) {
 						scope.ngModel = inst.getVal();
+						console.log(inst)
+						scope.change({item:inst.getVal()});
 						scope.$apply();
 					},
 					onClear:function(){

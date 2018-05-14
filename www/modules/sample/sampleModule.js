@@ -9,6 +9,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
             load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
                     'modules/base/directives/toast.js',
+                    'modules/base/directives/timeline.js',
                     'modules/sample/controllers/homeController.js'
                 ]);
             }]
@@ -101,6 +102,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         resolve:{
             load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
+                    'modules/base/directives/tabs.js',
                     'modules/sample/controllers/tabController.js'
                 ]);
             }]

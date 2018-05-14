@@ -7,7 +7,6 @@
 	<meta name="keyword" content="ionic,angular,html5,cordova,demo,lxt,chenjia">
 	<meta name="description" contect="ionic demo">
 	<meta name="author" contect="chenjia">
-	<meta name="baidu-site-verification" content="cywHJKqejR" />
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="pragma" content="no-cache">
 	<title>lxt</title>
@@ -15,6 +14,10 @@
 	<link rel="stylesheet" href="lxtClient-1.0.0.min.css">
 </head>
 <body>
+	<div ng-style="{opacity:init?0:1,display:init==2?'none':'flex'}" style="position:absolute;z-index:99999;transition:all .5s linear;width:100%;height:100%;display:flex;justify-content:center;align-items:center;background:#EDEDED;">
+		<img style="width:65px;height:65px;" src="images/loading.gif">
+	</div>
+	
 	<ion-side-menus delegate-handle="menuHandle">
 		<ion-side-menu side="left" style="display:none" ng-style="{display:menus!=null?'block':'none'}">
 			<div class="bar bar-header bar-calm">
@@ -33,24 +36,9 @@
 		</ion-side-menu>
 
 		<ion-side-menu-content>
-			<ion-nav-bar class="bar-positive"></ion-nav-bar>
+			<ion-nav-bar style="display:none;" ng-style="{display:init?'block':'none'}" class="bar-positive"></ion-nav-bar>
 			<ion-nav-view></ion-nav-view>
 		</ion-side-menu-content>
-		<style type="text/css">
-			.list .item.item-accordion {
-				height:50px;
-				line-height:50px;
-				padding:0 0 0 30px;
-				transition: 0.2s all linear;
-			}
-			.list .item.item-accordion.ng-hide {
-				height: 0px;
-			}
-			.list .item.item-accordion.ng-hide-add,
-			.list .item.item-accordion.ng-hide-remove {
-				display: block !important;
-			}
-		</style>
 	</ion-side-menus>
 	<nav style="display:none;" ng-style="{display:vo.ready?'block':'none'}" mfb-menu position="br" effect="zoomin" label="快捷菜单" active-icon="fa fa-minus" resting-icon="fa fa-plus" toggling-method="click">
 		<button mfb-button ui-sref="loading" icon="fa fa-spinner fa-pulse" label="加载图标"></button>
@@ -58,8 +46,7 @@
 		<button mfb-button ui-sref="contacts" icon="fa fa-book" label="通讯录"></button>
 		<button mfb-button ui-sref="chart" icon="fa fa-bar-chart" label="动态图表"></button>
 		<button mfb-button ui-sref="form" icon="fa fa-list-alt" label="表单"></button>
-		<button mfb-button ui-sref="tab.tab1" icon="fa fa-folder-o" label="选项卡"></button>
-		<button mfb-button ui-sref="login" icon="fa fa-lock" label="登录系统"></button>
+		<button mfb-button ui-sref="tab" icon="fa fa-folder-o" label="选项卡"></button>
 	</nav>
 </body>
 <script src="lxtClient-1.0.0.min.js"></script>

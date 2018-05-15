@@ -92,6 +92,14 @@ angular.module('app').controller('homeController', ['$rootScope', '$scope', 'uti
                 $scope.vo.slides = response.data.packageList.packages.response.lbpiclist.lbpic;
             });
         },
+        showPopover: function($event) {
+            utils.$ionicPopover.fromTemplateUrl('my-popover.html', {
+                scope: $scope
+            }).then(function(popover) {
+                $scope.popover = popover;
+                popover.show($event);
+            });
+        },
         onHomeScroll: function(event) {
             
         }

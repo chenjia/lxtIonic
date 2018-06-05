@@ -102,6 +102,7 @@ angular.module('app.route').config(['$stateProvider',function($stateProvider){
         resolve:{
             load:['$ocLazyLoad', function ($ocLazyLoad) {
                 return $ocLazyLoad.load([
+                    'modules/base/directives/tabs.js',
                     'modules/sample/controllers/tabController.js'
                 ]);
             }]

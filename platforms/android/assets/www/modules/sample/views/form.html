@@ -13,6 +13,14 @@
 					<i class="ion-umbrella"></i> 表单验证
 				</div>
 				<div class="item item-input">
+					<span class="input-label">input</span>
+					<input type="text" style="border:1px solid red;">
+				</div>
+				<div class="item item-input">
+					<span class="input-label">textarea</span>
+					<textarea style="border:1px solid red;"></textarea>
+				</div>
+				<div class="item item-input">
 					<span class="input-label">字段1（非空）</span>
 					<input type="text" name="字段1" ng-model="vo.field1" required ng-pattern="/^\d{0,9}(\.\d{1,9})?$/">
 				</div>
@@ -64,7 +72,7 @@
 				</div>
 				<label class="item item-input item-icon-right">
 					<span class="input-label">选择框</span>
-					<select class="ng-hide" input-select ng-model="vo.selector" select-data="vo.selectData" option-text="value" option-value="code" prefix="想学 " suffix=" 语言" circular="true"></select>
+					<select class="ng-hide" input-select ng-model="vo.selector" select-data="vo.selectData" option-text="value" option-value="code" prefix="想学 " suffix=" 语言" circular="true" change="vc.changeSelect(item)"></select>
 					<i class="icon ion-ios-arrow-down"></i>
 				</label>
 				<label class="item item-input item-icon-right">

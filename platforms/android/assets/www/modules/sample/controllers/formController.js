@@ -138,6 +138,9 @@ angular.module('app').controller('formController', ['$rootScope', '$scope', 'uti
                 text: 'toast text' + Math.random()
             }];
         },
+        changeSelect: function(item){
+            console.log(item)
+        },
         submit: function(form) {
             var validator = {
                 '字段1': {

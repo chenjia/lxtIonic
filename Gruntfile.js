@@ -33,6 +33,7 @@ module.exports = function(grunt) {
                     cfg.src + '/bower_components/ionic/js/ionic.bundle.min.js',
                     cfg.src + '/bower_components/oclazyload/dist/ocLazyLoad.min.js',
                     cfg.src + '/bower_components/ngCordova/ng-cordova.min.js',
+                    cfg.src + '/bower_components/ionic-native-transitions/dist/ionic-native-transitions.min.js',
                     cfg.src + '/modules/base/utils/security.js',
                     cfg.src + '/modules/base/utils/format.js',
                     cfg.src + '/modules/base/utils/cache.js',
@@ -41,6 +42,7 @@ module.exports = function(grunt) {
                     cfg.src + '/modules/base/utils/interceptor.js',
                     cfg.src + '/modules/base/utils/utils.js',
                     cfg.src + '/modules/base/app.js',
+                    cfg.src + '/modules/base/filters/filter.js',
                     cfg.src + '/modules/sample/sampleModule.js',
                     cfg.src + '/modules/sample/service/sampleService.js'
                 ],

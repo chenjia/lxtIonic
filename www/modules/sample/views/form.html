@@ -10,21 +10,6 @@
 		<form name="form" ng-submit="vc.submit(form)" novalidate>
 			<div class="list form">
 				<div class="item item-divider">
-					<i class="ion-umbrella"></i> 表单验证
-				</div>
-				<div class="item item-input">
-					<span class="input-label">字段1（非空）</span>
-					<input type="text" name="字段1" ng-model="vo.field1" required ng-pattern="/^\d{0,9}(\.\d{1,9})?$/">
-				</div>
-				<div class="item item-input">
-					<span class="input-label">字段2（长度4-8）</span>
-					<input type="text" name="字段2" ng-model="vo.field2" required ng-minlength="4" ng-maxlength="8">
-				</div>
-				<div class="item item-input">
-					<span class="input-label">字段3（1-10）</span>
-					<input type="number" name="字段3" ng-model="vo.field3" required min="1" max="10">
-				</div>
-				<div class="item item-divider">
 					<i class="ion-clock"></i> 日期与时间
 				</div>
 				<label class="item item-input item-icon-right">
@@ -57,6 +42,21 @@
 					<input input-datetime format="yyyy-MM-dd HH:mm" type="text" min="vo.startDatetime" ng-model="vo.endDatetime">
 					<i class="icon fa fa-calendar"></i>
 				</label>
+				<div class="item item-divider">
+					<i class="ion-umbrella"></i> 表单验证
+				</div>
+				<div class="item item-input">
+					<span class="input-label">字段1（非空）</span>
+					<input type="text" name="字段1" ng-model="vo.field1" required ng-pattern="/^\d{0,9}(\.\d{1,9})?$/">
+				</div>
+				<div class="item item-input">
+					<span class="input-label">字段2（长度4-8）</span>
+					<input type="text" name="字段2" ng-model="vo.field2" required ng-minlength="4" ng-maxlength="8">
+				</div>
+				<div class="item item-input">
+					<span class="input-label">字段3（1-10）</span>
+					<input type="number" name="字段3" ng-model="vo.field3" required min="1" max="10">
+				</div>
 			</div>
 			<div class="list form">
 				<div class="item item-divider">

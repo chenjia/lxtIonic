@@ -10,4 +10,4 @@ lxtIonic 是采用ionic开发的Hybird app，里面集成了很多demo可以供�
 
 github：https://github.com/chenjia/vue-app
 
-demo：https://chenjia.github.io/vue-app/demo/index.html
+demo：https://chenjia.github.io/vue-app/public/index.html
